@@ -60,3 +60,22 @@ When refining an existing Bricks page or section, respond accurately to these ta
 * **Contrast & Readability:** Text contrast `>= 4.5:1` (`>= 3:1` for large text); mobile body font `>= 16px` (prevents iOS auto-zoom); desktop body line length `60–75ch` (`35–60ch` on mobile).
 * **Touch & Responsive Stability:** Interactive touch targets `>= 44x44px` with `>= 8px` gap; use `min-height: 100dvh` (never `100vh`) on full-height Heroes to prevent iOS Safari address-bar jump; zero horizontal scroll on mobile.
 * **Icons, Motion & Core Web Vitals:** Single cohesive SVG icon family with uniform `strokeWidth` site-wide; base UI transitions `150–300ms` respecting `prefers-reduced-motion`; WebP/AVIF images with explicit `width`/`height` (and `loading="eager"` + `fetchpriority="high"` on hero LCP) to keep `CLS < 0.1`.
+
+## 6. Mode A — Standalone Bricks-Ready FE Demo (Pre-WordPress) & 1-to-1 Handoff
+
+Use **Mode A** when pitching or getting client visual approval before setting up WordPress and MCP Novamira Pro. Every demo must be engineered for zero-rewrite handoff into Bricks + ACSS:
+
+### 6.1. Standalone Demo Structure & Rules
+* **Clean Static Bundle:** Output pure semantic HTML5 + CSS + lightweight vanilla JS (e.g., `index.html`, `tokens.css`, `styles.css`, `main.js`, `design-system.json`). **Never use Tailwind, Bootstrap, or React** so styles map 1-to-1 to Bricks + ACSS.
+* **ACSS-Mirror Tokens (`tokens.css` + DTCG `design-system.json`):** Define `:root` variables using exact **Automatic.css** token names (`--primary`, `--secondary`, `--accent`, `--base`, `--neutral`, `--space-xs`..`--space-xxl`, `--section-space-*`, `--text-*`, `--h1`..`--h6`, `--radius-*`, `--content-width`), plus a DTCG-compatible `design-system.json` ready for direct import into **Novamira Design**.
+* **Bricks-Ready DOM & BEM:** Build every section using Bricks' native hierarchy (`section` > `.container` > `.grid--*` / `.block`) and 1-level **BEM Global Classes** (`.service-card`, `.service-card__title`, `.service-card--featured`) consuming only `var(--*)` ACSS tokens.
+* **Handoff Annotations:** Mark reusable blocks and dynamic loops directly in HTML comments:
+  * `<!-- [BRICKS-COMPONENT: service-card] -->`
+  * `<!-- [JETENGINE-LOOP: cpt=services] -->`
+  * `<!-- [BRICKS-TEMPLATE: header / footer] -->`
+* **Apply Full Quality Controls:** Run Phase 0 (Design Read, Surface Mode, 3 Dials), Bounded Verification (desktop + mobile in browser/Chrome DevTools), and the Section 5 UX Quality Floor before sending the preview to the client.
+
+### 6.2. Converting Approved Mode A Demo -> Mode B (WordPress + Novamira Pro)
+1. **Sync Design Tokens:** Import `design-system.json` into **Novamira Design**, mirror `tokens.css` values into **ACSS** + Bricks Theme Styles, and save the summary in **Novamira Memories**.
+2. **Map 1-to-1 to Bricks & JetEngine:** Convert each `<!-- [BRICKS-COMPONENT] -->` block into a native Bricks Component (with Properties), register the exact **BEM Global Classes** (whose ACSS `var(--*)` rules work unchanged), and wire `<!-- [JETENGINE-LOOP] -->` sections to JetEngine CPTs/CCTs and Query Builder.
+3. **Finalize & Handoff:** Configure **SureRank** SEO/Schema, flush Bricks CSS/site caches, run Bounded Verification on staging, and enable Advanced Themer **Strict Editor View** for client delivery.

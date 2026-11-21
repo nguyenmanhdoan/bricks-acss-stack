@@ -3,21 +3,30 @@ name: bricks-acss-stack
 description: >-
   Use this skill whenever designing, building, auditing, or modifying WordPress
   websites built with Bricks Builder, Automatic.css (ACSS), Advanced Themer,
-  BricksForge, BricksExtras, JetEngine, and SureRank SEO via MCP Novamira Pro.
-  Activate for Bricks layout/template/component creation, ACSS variable & BEM
-  styling, JetEngine CPT/CCT/Query Loop integration, BricksForge Pro Forms/GSAP,
-  BricksExtras interactive UI, SureRank SEO/Schema setup, or WordPress site
-  operations through Novamira Pro.
+  BricksForge, BricksExtras, JetEngine, and SureRank SEO via MCP Novamira Pro,
+  OR when creating a standalone Bricks-ready FE Demo / static HTML-CSS-JS
+  prototype (with ACSS-mirror tokens and BEM) for client approval prior to
+  WordPress deployment. Activate for FE demos, Bricks layout/template/component
+  creation, ACSS variable & BEM styling, JetEngine CPT/CCT/Query Loop
+  integration, BricksForge Pro Forms/GSAP, BricksExtras interactive UI,
+  SureRank SEO/Schema setup, or WordPress site operations through Novamira Pro.
 ---
 
-# Bricks Builder + ACSS + JetEngine + SureRank Stack (via MCP Novamira Pro)
+# Bricks Builder + ACSS + JetEngine + SureRank Stack (2-Mode Workflow)
 
-Standard operating procedures and architectural guardrails for building production WordPress websites on this stack without CSS bloat, hardcoded values, or broken dynamic data.
+Standard operating procedures and architectural guardrails for both **rapid client FE Demos** (before WordPress setup) and **full WordPress production builds** via MCP Novamira Pro without CSS bloat, hardcoded values, or broken dynamic data.
+
+## Execution Mode Routing (Choose Before Starting)
+
+* **Mode A — Standalone FE Demo (No WordPress / Novamira Pro yet):**
+  Use when designing a fast local HTML5/CSS/JS prototype for client sign-off before spinning up WordPress. Skip the Novamira Pro read gate; apply Phase 0 (Design Read, Surface Mode, 3 Dials), ACSS-mirror CSS variables (`tokens.css` + DTCG `design-system.json`), Bricks-ready semantic DOM + BEM classes, and component/JetEngine annotations (see [novamira-design-workflow.md](./references/novamira-design-workflow.md)).
+* **Mode B — WordPress Implementation (Connected via MCP Novamira Pro):**
+  Use when WordPress + Bricks + MCP Novamira Pro are active (building directly OR converting an approved Mode A FE Demo 1-to-1 into Bricks Components, ACSS tokens, JetEngine Query Loops, and SureRank SEO).
 
 ## Core Architecture Rules (Always Enforced)
 
-1. **Read Live State & Memories First (Novamira Pro Gate):**
-   Before creating or editing anything via MCP Novamira Pro, read **Novamira Memories** and inspect the live WordPress site (Abilities Hub, Read Mode status, installed plugins, existing Bricks global classes/components, active ACSS tokens, JetEngine CPTs/fields, and SureRank settings). Always use Novamira Pro's native **Bricks Specialization abilities** instead of raw PHP/HTML hacks so pages, templates, and components stay 100% editable in Bricks. Never guess meta keys or class IDs.
+1. **Read Live State & Memories First (Mode B — Novamira Pro Gate):**
+   In Mode B, before creating or editing anything via MCP Novamira Pro, read **Novamira Memories** and inspect the live WordPress site (Abilities Hub, Read Mode status, installed plugins, existing Bricks global classes/components, active ACSS tokens, JetEngine CPTs/fields, and SureRank settings). Always use Novamira Pro's native **Bricks Specialization abilities** instead of raw PHP/HTML hacks so pages, templates, and components stay 100% editable in Bricks. Never guess meta keys or class IDs.
 2. **Semantic Bricks Structure First:**
    Use native Bricks semantic elements (`section` > `container` > `block` / `div`, proper HTML tags `header`, `main`, `article`, `nav`, `footer`, `ul`/`li`) with clean DOM depth. Never wrap unnecessary `div` layers.
 3. **ACSS Variables + BEM Over Raw Values:**

@@ -2,6 +2,18 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [1.4.0] - 2026-11-22
+
+### Added
+* **Quy trình 2 chế độ (2-Mode Workflow)** trong `SKILL.md` và `references/novamira-design-workflow.md`:
+  * **Mode A — Standalone FE Demo (Chưa cần WordPress / Novamira Pro):** Cho phép dựng nhanh bản prototype tĩnh HTML5 + CSS + JS nhẹ để trình bày và chốt giao diện với khách hàng trước khi dựng hạ tầng WordPress.
+  * **Chuẩn chuyển đổi 1-1 không viết lại CSS:** Khai báo `tokens.css` mô phỏng đúng tên biến Automatic.css (`--primary`, `--space-*`, `--section-space-*`, `--text-*`, `--radius-*`), xuất kèm `design-system.json` chuẩn DTCG cho Novamira Design, giữ DOM khớp cấu trúc Bricks + BEM và đánh dấu sẵn `<!-- [BRICKS-COMPONENT] -->`, `<!-- [JETENGINE-LOOP] -->`.
+  * **Checklist chuyển giao Mode A -> Mode B:** Quy trình 3 bước nạp trực tiếp bản FE Demo đã duyệt vào WordPress Staging + Bricks + ACSS + JetEngine + SureRank qua MCP Novamira Pro.
+
+### Changed
+* Cập nhật `SKILL.md` để tự động kích hoạt cả khi yêu cầu thiết kế FE Demo độc lập trước khi triển khai WordPress.
+* Cập nhật `README.md` bổ sung điểm nổi bật của quy trình 2 chế độ.
+
 ## [1.3.0] - 2026-11-22
 
 ### Added

@@ -75,6 +75,7 @@ git -C "$env:USERPROFILE\.codex\skills\bricks-acss-stack" pull
 
 ## Điểm nổi bật
 
+* **Hỗ trợ quy trình 2 chế độ (FE Demo -> WordPress 1-1):** Hỗ trợ dựng nhanh bản **FE Demo tĩnh** thuần HTML5/CSS/JS (dùng đúng tên biến ACSS + BEM + `design-system.json` chuẩn DTCG) để chốt giao diện với khách trước, sau đó chuyển đổi 1-1 sang Bricks Components, ACSS và JetEngine qua MCP Novamira Pro mà không phải viết lại CSS.
 * **Bám sát tài liệu chính chủ:** Tổng hợp quy chuẩn từ Novamira Docs (`novamira.ai/docs/`), Bricks Academy (`academy.bricksbuilder.io`) và Automatic.css.
 * **Tiết kiệm Context Window:** Áp dụng Progressive Disclosure — chỉ nạp tệp tham chiếu tương ứng với tác vụ đang thực hiện.
 * **An toàn khi thao tác Production:** Bắt buộc đọc trạng thái site thật và Novamira Memories trước khi ghi, tôn trọng Read Mode trên Production và kích hoạt Strict Editor View của Advanced Themer trước khi bàn giao khách hàng.
