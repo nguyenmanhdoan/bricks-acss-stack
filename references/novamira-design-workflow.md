@@ -42,7 +42,7 @@ Store the finalized direction directly in WordPress via **Novamira Design** (mac
 3. **Step 3 — Section-by-Section Build in Draft Mode:** Assemble pages section by section in `draft` status, matching the 3 Dials and Surface Mode, using clean semantic DOM (`section` > `container` > `block`) and binding real **JetEngine** dynamic data early instead of Lorem Ipsum.
 4. **Step 4 — Bounded Verification Pass (No Infinite Polish Loops):**
    * Cross-check built pages against the **Novamira Design** record (catch off-palette colors, hardcoded pixel/rem values, font drift, or AI-slop repetition).
-   * Inspect **desktop + mobile together in one batched round** (via Novamira Visual or Chrome DevTools), fix all findings in one batch, confirm with **at most one more round**, and stop.
+   * Inspect **desktop (`1440x900`) + mobile (`390x844`) together in one batched round** using **`playwright-cli`** (preferred for token efficiency: `open`, `resize`, `screenshot`, `console error`, `eval` for horizontal overflow/broken images/dataLayer events, `close`), or via Novamira Visual / Chrome DevTools. Fix all findings in one batch, confirm with **at most one more round**, and stop.
 5. **Step 5 — SEO & Client Handoff:** Verify single `<h1>`, heading hierarchy, and **SureRank** metadata/Schema, then enable **Strict Editor View** in Advanced Themer for client roles before handoff.
 
 ## 4. Steering Vocabulary (On-Demand Refinement Verbs)
@@ -73,7 +73,7 @@ Use **Mode A** when pitching or getting client visual approval before setting up
   * `<!-- [BRICKS-COMPONENT: service-card] -->`
   * `<!-- [JETENGINE-LOOP: cpt=services] -->`
   * `<!-- [BRICKS-TEMPLATE: header / footer] -->`
-* **Apply Full Quality Controls:** Run Phase 0 (Design Read, Surface Mode, 3 Dials), Bounded Verification (desktop + mobile in browser/Chrome DevTools), and the Section 5 UX Quality Floor before sending the preview to the client.
+* **Apply Full Quality Controls:** Run Phase 0 (Design Read, Surface Mode, 3 Dials), Bounded Verification using **`playwright-cli`** (desktop `1440x900` + mobile `390x844` screenshots, `console error`, horizontal overflow check), and the Section 5 UX Quality Floor before sending the preview to the client.
 
 ### 6.2. Converting Approved Mode A Demo -> Mode B (WordPress + Novamira Pro)
 1. **Sync Design Tokens:** Import `design-system.json` into **Novamira Design**, mirror `tokens.css` values into **ACSS** + Bricks Theme Styles, and save the summary in **Novamira Memories**.

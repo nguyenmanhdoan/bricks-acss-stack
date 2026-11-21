@@ -2,6 +2,11 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [1.5.0] - 2026-11-22
+
+### Changed
+* Tích hợp **`playwright-cli`** (`@playwright/cli`) làm công cụ kiểm thử tự động ưu tiên (tiết kiệm token) trong Bước 4 (**Bounded Verification Pass**) và **Mode A (FE Demo)** tại `references/novamira-design-workflow.md` — chuẩn hóa viewport kiểm thử Desktop (`1440x900`) + Mobile (`390x844`), kiểm tra `console error`, tràn khung ngang và sự kiện tracking (`dataLayer`).
+
 ## [1.4.0] - 2026-11-22
 
 ### Added
