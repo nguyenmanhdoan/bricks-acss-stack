@@ -21,24 +21,55 @@ bricks-acss-stack/
 └── LICENSE
 ```
 
-## Cài đặt cho Google Antigravity
+## Cài đặt
 
-### Cách 1: Cài toàn cục (dùng cho mọi dự án trên máy)
+### 1. Google Antigravity
+
+**Cài toàn cục (dùng cho mọi dự án trên máy):**
 
 ```powershell
+# Windows (PowerShell)
 git clone https://github.com/nguyenmanhdoan/bricks-acss-stack.git "$env:USERPROFILE\.gemini\config\skills\bricks-acss-stack"
 ```
 
-### Cách 2: Cài cục bộ theo từng dự án
+```bash
+# macOS / Linux
+git clone https://github.com/nguyenmanhdoan/bricks-acss-stack.git "$HOME/.gemini/config/skills/bricks-acss-stack"
+```
+
+### 2. OpenAI Codex (Codex App / Codex CLI)
+
+**Cài toàn cục (dùng cho mọi dự án trên máy):**
+
+```powershell
+# Windows (PowerShell)
+git clone https://github.com/nguyenmanhdoan/bricks-acss-stack.git "$env:USERPROFILE\.codex\skills\bricks-acss-stack"
+```
+
+```bash
+# macOS / Linux
+git clone https://github.com/nguyenmanhdoan/bricks-acss-stack.git "$HOME/.codex/skills/bricks-acss-stack"
+```
+
+### 3. Cài cục bộ theo từng dự án (dùng chung cho cả Antigravity & Codex)
 
 ```powershell
 git clone https://github.com/nguyenmanhdoan/bricks-acss-stack.git ".agents/skills/bricks-acss-stack"
 ```
 
-### Cách 3: Cài qua CLI (`npx skills`)
+### 4. Cài nhanh qua CLI (`npx skills`)
 
 ```bash
 npx skills add nguyenmanhdoan/bricks-acss-stack
+```
+
+### Cập nhật phiên bản mới
+
+Chạy `git pull` trong thư mục skill đã cài:
+
+```powershell
+git -C "$env:USERPROFILE\.gemini\config\skills\bricks-acss-stack" pull
+git -C "$env:USERPROFILE\.codex\skills\bricks-acss-stack" pull
 ```
 
 ## Điểm nổi bật
