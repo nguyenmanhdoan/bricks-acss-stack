@@ -36,6 +36,7 @@ Standard operating procedures and architectural guardrails for building producti
    Verify target post/template ID, existing Bricks global classes, ACSS variables, and JetEngine/SureRank configuration.
 2. **Load Only Relevant Reference Files:**
    - Site-wide MCP Novamira Pro operations (Abilities Hub, Read Mode, Memories, Bricks Specialization, WP-CLI, cache): read [novamira-pro-ops.md](./references/novamira-pro-ops.md)
+   - New website design & anti-AI-slop workflow (**Novamira Design** record, palette/typography/don'ts, component-first build, visual audit): read [novamira-design-workflow.md](./references/novamira-design-workflow.md)
    - Bricks Builder core architecture (Components & Properties, Cascade Layers, Interactions, Query Loop, `{echo:}` allowlist, Code Signatures): read [bricks-academy-core.md](./references/bricks-academy-core.md)
    - Styling, ACSS variables, BEM, Advanced Themer: read [acss-and-bem.md](./references/acss-and-bem.md)
    - JetEngine (100% core) & optional BricksForge/BricksExtras: read [bricks-addons-and-jetengine.md](./references/bricks-addons-and-jetengine.md)

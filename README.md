@@ -12,6 +12,7 @@ bricks-acss-stack/
 ├── SKILL.md                                 # Quy tắc lõi & điều hướng Progressive Disclosure
 ├── references/
 │   ├── novamira-pro-ops.md                  # Quy trình vận hành MCP Novamira Pro (Abilities Hub, Read Mode, Memories)
+│   ├── novamira-design-workflow.md          # Quy trình Novamira Design & thiết kế web mới chống AI slop
 │   ├── bricks-academy-core.md               # Chuẩn Bricks Academy (Components, Cascade Layers, Interactions, Code Signatures)
 │   ├── acss-and-bem.md                      # Hệ biến ACSS, BEM, tách vai Advanced Themer & Strict Editor View
 │   ├── bricks-addons-and-jetengine.md       # JetEngine (CPT/CCT/Relations/Query Builder) & BricksForge/BricksExtras
