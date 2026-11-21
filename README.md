@@ -18,6 +18,7 @@ bricks-acss-stack/
 │   ├── bricks-addons-and-jetengine.md       # JetEngine (CPT/CCT/Relations/Query Builder) & BricksForge/BricksExtras
 │   └── surerank-seo.md                      # Chuẩn SEO On-page & Schema JSON-LD duy nhất trên SureRank
 ├── README.md
+├── CHANGELOG.md
 └── LICENSE
 ```
 
@@ -77,3 +78,7 @@ git -C "$env:USERPROFILE\.codex\skills\bricks-acss-stack" pull
 * **Bám sát tài liệu chính chủ:** Tổng hợp quy chuẩn từ Novamira Docs (`novamira.ai/docs/`), Bricks Academy (`academy.bricksbuilder.io`) và Automatic.css.
 * **Tiết kiệm Context Window:** Áp dụng Progressive Disclosure — chỉ nạp tệp tham chiếu tương ứng với tác vụ đang thực hiện.
 * **An toàn khi thao tác Production:** Bắt buộc đọc trạng thái site thật và Novamira Memories trước khi ghi, tôn trọng Read Mode trên Production và kích hoạt Strict Editor View của Advanced Themer trước khi bàn giao khách hàng.
+
+## Lịch sử cập nhật
+
+Xem chi tiết các phiên bản thay đổi tại [CHANGELOG.md](./CHANGELOG.md).
