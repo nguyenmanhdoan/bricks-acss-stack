@@ -2,6 +2,14 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.2.0] - 2026-11-23
+
+### Added
+* **Cơ chế Kiểm soát Xác nhận từng bước (Mandatory Approval & Step-Gate Governance)** trong `SKILL.md` và `references/novamira-design-workflow.md`:
+  * **Chốt quy trình tổng thể trước khi chạy:** Bắt buộc trình bày kế hoạch tổng thể và danh sách bước nhỏ để người dùng xác nhận trước khi viết code hoặc thao tác WordPress.
+  * **Xác nhận thông tin trước mọi bước thiết kế FE:** Bắt buộc xác nhận thông tin triển khai (Design Read, 3 Dials, hướng màu/font, dàn ý section) trước khi dựng FE Demo Trang chủ từ brief và trước khi thiết kế các trang con từ demo đã duyệt.
+  * **Chia nhỏ bước & Done-Before-Next:** Triển khai cuốn chiếu theo từng bước độc lập (`2.1` -> `2.2` -> `2.3` -> `3.1` -> `3.2` -> `4.1`), báo cáo ngắn gọn kết quả và chờ người dùng xác nhận hoàn tất bước hiện tại trước khi sang bước tiếp theo để tránh lỗi dây chuyền.
+
 ## [2.1.0] - 2026-11-23
 
 ### Added

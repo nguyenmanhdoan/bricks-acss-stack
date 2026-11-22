@@ -15,6 +15,16 @@ description: >-
 
 Follow this **linear 4-stage production workflow** from start to finish. **Detect the project's current stage first** and execute only that stage — **NEVER restart Stage 1 or Stage 2 when building inner/sub-pages.**
 
+## Mandatory Approval & Step-Gate Governance (Anti-Runaway Rule)
+
+Never execute large multi-step builds blindly without user sign-off:
+
+1. **Master Plan Approval First:** Before executing any project (whether starting at Stage 1 or Stage 2), present the **overall roadmap & step breakdown** (target pages, data architecture, milestones) and **WAIT for user confirmation** before writing code or mutating WordPress.
+2. **Pre-Design Info Confirmation:**
+   - Before building the **initial Homepage FE Demo** from a brief: confirm Design Read, 3 Dials, proposed palette/typography, and Homepage section outline with the user.
+   - Before building **inner/sub-pages** from an approved Homepage Demo: confirm the inner-page list, section outlines, dynamic data needs, and CTA/form requirements with the user.
+3. **Chunked Execution — Done Before Next:** Break execution into discrete atomic steps (e.g., `2.1 Bootstrap & Design System` -> `2.2 JetEngine Data Layer` -> `2.3 Shared Bricks Templates & Components` -> `3.1 Homepage` -> `3.2 Inner Pages` -> `4.1 QA & Handoff`). After each step, report concise results (created files/IDs/preview) and **WAIT for user confirmation** that the step is done before moving to the next step — preventing cascading rework.
+
 ## Sequential 4-Stage Production Pipeline
 
 ### Stage 1 — Brief & Standalone FE Demo (Pre-WordPress)

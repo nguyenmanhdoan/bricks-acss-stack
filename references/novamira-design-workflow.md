@@ -6,9 +6,9 @@ Aligned with **Novamira Design** (`novamira.ai/docs/`, Novamira 1.10.0+) and dis
 
 Never jump straight into building sections with default LLM aesthetics. Establish four quick decisions first:
 
-* **One-Line Design Read:** State a single concise line before creating tokens or layouts:
+* **One-Line Design Read & Pre-Build Confirmation:** State a concise summary before creating tokens or layouts:
   *"Reading this as: `<page kind>` for `<audience>`, in `<Surface Mode>` mode, with a `<vibe>` visual language."*
-  Ask at most **one** clarifying question only when the brief genuinely diverges; if clear from context, proceed.
+  Present the proposed **3 Dials, palette/typography direction, and section outline**, and **WAIT for user confirmation** before generating the FE Demo (or before designing inner pages from an approved Homepage Demo).
 * **Surface Mode (Per Page, Not Whole Site):**
   * `Persuade`: Landing pages, services, pricing, campaigns — visual clarity and single primary CTA lead.
   * `Read`: Blog posts, guides, documentation, case studies — scannable typography and reading comfort lead.
