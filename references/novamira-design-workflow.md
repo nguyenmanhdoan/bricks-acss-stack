@@ -35,15 +35,17 @@ Store the finalized direction directly in WordPress via **Novamira Design** (mac
    * Alternate section compositions purposefully (asymmetric 40/60 splits, typographic statements, hierarchical bento grids, concrete proof/metrics bands, real photography).
    * Reserve accent color for the single primary CTA focus per viewport.
 
-## 3. Five-Step Build & Bounded Verification Workflow
+## 3. Sequential Stage Alignment (No Per-Page Loop Reset)
 
-1. **Step 1 — Lock Art Direction & Tokens:** Complete Phase 0 (Design Read, Surface Mode, 3 Dials), write the **Novamira Design** record, sync tokens into **ACSS** + Bricks Theme Styles, and save a summary in **Novamira Memories**.
-2. **Step 2 — Component-First Foundation:** Never dump an entire multi-section page monolithically. Build reusable **Bricks Components** (with Properties) and **BEM Global Classes** first (Header, Footer, Buttons, Card variants, Proof/Testimonial block, CTA banner) styled strictly with ACSS variables.
-3. **Step 3 — Section-by-Section Build in Draft Mode:** Assemble pages section by section in `draft` status, matching the 3 Dials and Surface Mode, using clean semantic DOM (`section` > `container` > `block`) and binding real **JetEngine** dynamic data early instead of Lorem Ipsum.
-4. **Step 4 — Bounded Verification Pass (No Infinite Polish Loops):**
+Follow the 4-stage pipeline in `SKILL.md` strictly in order — **never repeat Stage 1 or Stage 2 when building sub-pages**:
+
+1. **Stage 1 (FE Demo & Art Direction — Run ONCE):** Complete Phase 0 (Design Read, Surface Modes, 3 Dials), build the standalone Bricks-ready FE Demo (`index.html`, `tokens.css`, `styles.css`, `main.js`, `design-system.json`), quick-check via `playwright-cli`, and **STOP at Gate 1** for client approval.
+2. **Stage 2 (WordPress Foundation — Run ONCE after Demo Approval):** Write the **Novamira Design** record from `design-system.json`, sync tokens into **ACSS** + Bricks Theme Styles, save conventions in **Novamira Memories**, create the full **JetEngine** data layer (Options Page + CPT/CCT/Relations/Queries), and build all shared **Bricks Templates, Components & BEM Global Classes**.
+3. **Stage 3 (All Pages Build — Reuse Only):** Assemble the Homepage and all inner/sub-pages in `draft` status strictly reusing Stage 2 Components, BEM Global Classes, ACSS tokens, and JetEngine bindings. Configure **SureRank** SEO/Schema per page.
+4. **Stage 4 (Batched Bounded Verification & Handoff — Run ONCE for Whole Site):**
    * Cross-check built pages against the **Novamira Design** record (catch off-palette colors, hardcoded pixel/rem values, font drift, or AI-slop repetition).
-   * Inspect **desktop (`1440x900`) + mobile (`390x844`) together in one batched round** using **`playwright-cli`** (preferred for token efficiency: `open`, `resize`, `screenshot`, `console error`, `eval` for horizontal overflow/broken images/dataLayer events, `close`), or via Novamira Visual / Chrome DevTools. Fix all findings in one batch, confirm with **at most one more round**, and stop.
-5. **Step 5 — SEO & Client Handoff:** Verify single `<h1>`, heading hierarchy, and **SureRank** metadata/Schema, then enable **Strict Editor View** in Advanced Themer for client roles before handoff.
+   * Inspect **Homepage + representative sub-pages on desktop (`1440x900`) + mobile (`390x844`) together in one batched round** using **`playwright-cli`** (`open`, `resize`, `screenshot`, `console error`, `eval` for horizontal overflow/broken images/dataLayer events, `close`), or via Novamira Visual / Chrome DevTools. Fix all findings in one batch, confirm with **at most one more round**, and stop.
+   * Verify single `<h1>`, heading hierarchy, and **SureRank** metadata/Schema, then enable **Strict Editor View** in Advanced Themer for client roles before handoff.
 
 ## 4. Steering Vocabulary (On-Demand Refinement Verbs)
 

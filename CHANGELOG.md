@@ -2,6 +2,16 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.0.0] - 2026-11-23
+
+### Changed
+* **Tái cấu trúc toàn bộ `SKILL.md` và `references/novamira-design-workflow.md` thành Quy trình tuần tự 4 giai đoạn (Sequential 4-Stage Pipeline)** để OpenAI Codex và Google Antigravity thực thi chính xác, không bị lặp lại vòng đời ở từng trang con:
+  * **Stage 1:** Brief & Dựng FE Demo tĩnh Bricks-Ready -> **GATE 1 (Bắt buộc dừng chờ chốt Demo)**.
+  * **Stage 2:** Thiết lập nền tảng WordPress **1 lần duy nhất** (Novamira Design + ACSS + toàn bộ tầng dữ liệu JetEngine + Bricks Global Templates/Components/BEM).
+  * **Stage 3:** Triển khai đồng loạt Trang chủ & các trang con bằng cách **tái sử dụng 100% hệ thống Stage 2** (cấm lặp lại Design Read hay tạo lại token/class mới cho từng trang con) + cấu hình SureRank.
+  * **Stage 4:** Kiểm thử gom 1 đợt toàn site bằng `playwright-cli` (Bounded Verification Pass) -> Bật **Strict Editor View** của Advanced Themer & bàn giao.
+* **Cập nhật quy định JetEngine Options Pages** trong `references/bricks-addons-and-jetengine.md`: cho phép gom tập trung cả Brand/Logo lẫn nội dung tĩnh Trang chủ/khối dùng chung (`title`, `subtitle`, `description`, ảnh chính lưu dạng **Media ID**), chia tab gọn nhẹ dưới ~100–150 KB, dùng Meta Box theo trang khi >5–10 trang tĩnh và giữ danh sách tăng trưởng ở CPT/CCT.
+
 ## [1.6.0] - 2026-11-22
 
 ### Changed
