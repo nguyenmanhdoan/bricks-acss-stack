@@ -2,6 +2,14 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [1.6.0] - 2026-11-22
+
+### Changed
+* Nâng cấp chuyên sâu toàn bộ quy chuẩn **JetEngine** (lõi 100% dự án) trong `references/bricks-addons-and-jetengine.md`:
+  * **Phân tách mô hình dữ liệu:** Quy định rõ khi nào dùng CPT (kèm chặn index trang mỏng với SureRank), CCT (bắt buộc qua Query Builder khi dùng trên Bricks), Options Pages (cấm nhồi Repeater lớn gây phình autoload `wp_options`), Glossaries và quy ước đặt tên `snake_case` có tiền tố.
+  * **Kiến trúc Query chuẩn Bricks:** Phân tầng Bricks Native Query Loop vs. JetEngine Query Builder + Bricks Query Loop; hạn chế widget JetEngine Listing Grid thừa wrapper.
+  * **Relations, Dynamic Data & Hiệu năng:** Chống lồng quá 2 cấp Query Loop (N+1), dùng `{je_current_object_field}` đúng ngữ cảnh CCT/SQL/Repeater, bắt buộc phân trang/Load More và đánh index/Object Cache cho bảng lớn.
+
 ## [1.5.0] - 2026-11-22
 
 ### Changed

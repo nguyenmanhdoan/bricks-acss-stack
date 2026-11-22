@@ -1,22 +1,34 @@
 # JetEngine (Core) & Optional Bricks Add-ons (BricksForge, BricksExtras)
 
-Use this reference when implementing dynamic data, custom post types, query loops, forms, animations, or interactive UI components.
+Use this reference when implementing dynamic data, custom post types, custom content types, relations, options pages, query loops, forms, animations, or interactive UI components.
 
 ## 1. JetEngine Integration with Bricks Builder (Always Active — 100% of Projects)
 
-JetEngine is a permanent core pillar on every website project. Always design dynamic data architecture around JetEngine before considering custom PHP/SQL.
+JetEngine is a permanent core pillar on every website project. Always design dynamic data architecture around JetEngine before considering custom PHP or raw SQL.
 
-* **Data Modeling First:**
-  * Use **CPT (Custom Post Type)** when items need public URLs, SEO pages, taxonomies, and SureRank indexing (e.g., Projects, Services, Case Studies, Products).
-  * Use **CCT (Custom Content Type)** for high-volume structured records that do not need standalone SEO URLs (e.g., Form Leads, Reviews, Booking Logs, Directory Specs) to keep `wp_posts` and `wp_postmeta` fast.
-  * Use **Relations** instead of storing raw post IDs in text fields when linking CPTs (e.g., Services <-> Case Studies, Team <-> Projects).
-* **Query Loops:**
-  * Prefer **JetEngine Query Builder** for complex filtering, meta queries, relation queries, or CCT queries, then select that JetEngine Query inside Bricks' native Query Loop.
-  * Keep simple standard post loops on Bricks' native Query Loop to avoid unnecessary overhead.
-* **Dynamic Data Binding:**
-  * Always inspect the actual registered JetEngine meta field keys via MCP Novamira Pro before binding dynamic tags in Bricks.
-  * Use Bricks dynamic tag format matching the registered provider (e.g., `{je_<cpt>_<field_name>}` or standard WP `{post_title}`, `{featured_image}`, `{post_url}`, and JetEngine relation/repeater loops). Verify the exact dynamic tag syntax registered on the live site if unsure.
-  * For repeaters and relations, bind a nested Bricks Query Loop rather than outputting raw HTML from PHP callbacks whenever possible.
+### 1.1. Data Modeling Rules (CPT vs. CCT vs. Options Page vs. Glossary)
+* **Custom Post Types (CPT):** Use for entities that require public URLs, taxonomies, and SureRank SEO indexing (e.g., Services, Projects, Case Studies, Team, Products).
+  * If a CPT is used purely as an internal data container without standalone pages (e.g., Testimonials, Partner Logos), set `publicly_queryable: false` / `has_archive: false` (or `noindex` in SureRank) to prevent thin duplicate pages from being indexed.
+* **Custom Content Types (CCT):** Use for high-volume structured records or non-SEO data (Form Leads, Reviews, Booking Logs, Directory Specs, Store Locations). CCTs use dedicated custom MySQL tables, keeping `wp_posts` and `wp_postmeta` lean and fast.
+  * **Bricks Query Rule for CCT:** Native Bricks post queries cannot read CCT tables directly — always create a **JetEngine > Query Builder** query (`Custom Content Type`) and connect it as the source inside a Bricks Query Loop.
+* **Options Pages:** Use strictly for lightweight global site settings (hotline, address, social links, global CTA copy, brand config).
+  * **Autoload Guardrail:** Never store large Repeater arrays or hundreds of records inside an Options Page, as WordPress autoloads `wp_options` on every page request. Move structured datasets to a CCT or CPT.
+* **Glossaries:** Use JetEngine Glossaries for reusable select/checkbox option lists (provinces, service tiers, statuses) instead of duplicating choices across multiple Meta Boxes.
+* **Naming Convention:** Use consistent `snake_case` with a short entity prefix for meta keys (e.g., `srv_price_from`, `prj_client_name`) to prevent collisions across Meta Boxes and keep **Novamira Memories** clean.
+
+### 1.2. Query Architecture (Bricks Query Loop vs. Query Builder vs. Listing Grid)
+* **Bricks Native Query Loop (Default for simple loops):** Use for standard Posts, CPTs, Terms, and Media — produces the cleanest semantic DOM and pairs natively with ACSS `.grid--*` and BEM Global Classes.
+* **JetEngine Query Builder + Bricks Query Loop (Hybrid Standard):** Use for CCTs, Relations, SQL Queries, REST API queries, Data Stores, or multi-condition meta queries — combines JetEngine's data engine with Bricks' native layout and styling control.
+* **Avoid JetEngine Listing Grid Widget:** Do not use the JetEngine Listing Grid widget inside Bricks (it adds extra wrapper markup and abstraction overhead) unless a project explicitly needs a Listing-only feature such as *Listing Injections*.
+
+### 1.3. Relations, Repeaters & Dynamic Data Binding
+* **Relations:** Always use **JetEngine Relations** (One-to-One, One-to-Many, Many-to-Many, with optional relation meta fields) instead of storing raw Post IDs in text fields. Display related items via a JetEngine Relations Query attached to a Bricks Query Loop.
+* **Avoid Deep Nested Loops:** Avoid nesting more than 2 Query Loops inside a single card (prevents N+1 database queries and object-context bugs). Simplify the card data model or use a single cached SQL Query when complex joins are required.
+* **Dynamic Tags Verification:** Always inspect actual registered JetEngine meta keys and field slugs via **MCP Novamira Pro** before binding dynamic tags in Bricks. Use `{je_current_object_field}` when pulling fields from CCT, SQL, or Repeater contexts, and prefer nested Bricks Query Loops over outputting raw HTML from PHP callbacks.
+
+### 1.4. JetEngine Performance Guardrails
+* **Always Paginate:** Never render hundreds of CPT/CCT items in a single unpaginated loop; always configure Pagination, Load More, or AJAX filtering (Bricks native Query Filters or JetSmartFilters when installed).
+* **Indexing & Caching:** For large CCT or Relations tables, index columns frequently used in `meta_query` / `WHERE` clauses and pair with Object Cache (Redis/Memcached) or Query Caching so heavy queries do not hit MySQL uncached on every request.
 
 ## 2. BricksForge (Optional — Verify Installed via Novamira Pro First)
 
