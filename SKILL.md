@@ -25,22 +25,23 @@ Follow this **linear 4-stage production workflow** from start to finish. **Detec
   3. Annotate reusable blocks and dynamic loops (`<!-- [BRICKS-COMPONENT: name] -->`, `<!-- [JETENGINE-LOOP: cpt=slug] -->`).
   4. Quick visual check with `playwright-cli` (`1440x900` + `390x844`).
 * **GATE 1 (Mandatory Stop):** Present the FE Demo and **STOP for user/client sign-off** before moving to Stage 2. If revisions are requested, refine the demo in place using steering verbs (`critique`, `polish`, `bolder`, `quieter`) — do not jump to WordPress yet.
+  * *Optional Stage 1B (Only if client strictly demands static previews of inner pages):* Extend the static demo for bespoke pages (Service Landing Pages, About, Contact) **reusing the exact approved `tokens.css` & `styles.css`** — never re-initialize the design system, and never build static demos for dynamic Archive/Single templates.
 
 ### Stage 2 — WordPress Site Foundation (Run ONCE per Project via MCP Novamira Pro)
 * **When:** After FE Demo is approved (or starting directly on an existing WordPress Staging site).
 * **Actions:**
-  1. **Novamira Pro Read-First Gate:** Read **Novamira Memories**, inspect Abilities Hub, verify core stack (**Bricks, ACSS, Advanced Themer, JetEngine, SureRank**) and check whether optional add-ons (**BricksForge**, **BricksExtras**) are active.
-  2. **Lock Design System Once:** Import `design-system.json` into **Novamira Design**, mirror `tokens.css` into **ACSS** + Bricks Theme Styles (keep Advanced Themer Framework disabled), and save conventions in **Novamira Memories**.
+  1. **Stage 2.0 Initial Bootstrap (Human vs. Agent Split):** Human installs/activates plugins + licenses, creates WP Application Password, connects MCP Novamira Pro, enables required **Abilities Hub** groups (Bricks Specialization, Novamira Design, Memories, WP-CLI), and turns **Read Mode OFF** on Staging. Then the **Agent automatically executes** all site/plugin discovery and configuration below (see [novamira-pro-ops.md](./references/novamira-pro-ops.md)).
+  2. **Lock Design System Once:** Agent writes `design-system.json` into **Novamira Design**, configures Bricks Settings (`Cascade layer: ON`, `External Files`) + **ACSS** tokens + Bricks Theme Styles (verifies Advanced Themer Framework is disabled), and saves conventions in **Novamira Memories**.
   3. **Build Complete JetEngine Data Layer Once:**
      - **Options Page (tabbed):** Brand/Logo (Media ID), Global Info (hotline, address, social, shared CTAs), and centralized static content (title, subtitle, description, main images as Media ID) for Homepage & shared sections.
      - **Page Meta Boxes** (if >5–10 static pages) + **CPTs, CCTs, Taxonomies, Relations, Glossaries, and Query Builder queries** for all growing/dynamic data.
-  4. **Build Shared Bricks System Once:** Create Global Templates (Header, Footer, Single, Archive, 404), reusable **Bricks Components** (with Properties), and **BEM Global Classes** using Novamira Pro's native Bricks Specialization abilities.
+  4. **Build Shared Bricks System & Dynamic Templates Once:** Create Global Templates (`Header`, `Footer`, `Blog Archive`, `Single Blog`, `Project/CPT Archive`, `Single Project/CPT`, `404`), reusable **Bricks Components** (with Properties), and **BEM Global Classes** using Novamira Pro's native Bricks Specialization abilities. *(All Archive/Single inner pages are designed directly here — never built as static FE demos).*
 
 ### Stage 3 — Multi-Page Implementation (Reuse Only — NO Loop Reset)
-* **When:** Foundation (Stage 2) is ready and building the Homepage + all inner/sub-pages.
+* **When:** Foundation (Stage 2) is ready and building the Homepage + bespoke inner pages (Service Landing Pages, About, Contact).
 * **Strict Anti-Loop Rule:** **DO NOT re-run Stage 1 (Design Read / token creation) or recreate global classes/components per sub-page.**
 * **Actions:**
-  1. Assemble Homepage and all sub-pages in `draft` status by **reusing** Stage 2 Bricks Components, BEM Global Classes, ACSS tokens, and JetEngine Options Page / Meta Box / Query Loop bindings.
+  1. For bespoke inner pages without prior static designs (e.g., Service Landing Pages, About, Contact), confirm a **brief section outline** first, then build directly on Bricks Staging in `draft` status by **reusing** Stage 2 Bricks Components, BEM Global Classes, ACSS tokens, and JetEngine Options Page / Meta Box / Relation / Query Loop bindings.
   2. Configure **SureRank** SEO metadata and Schema (single JSON-LD source; never duplicate schema).
 
 ### Stage 4 — Batch QA Verification & Client Handoff (Run ONCE for the Whole Site)

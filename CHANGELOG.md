@@ -2,6 +2,15 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.1.0] - 2026-11-23
+
+### Added
+* **Stage 2.0 — Initial Site Bootstrap Checklist (Human vs. Agent Split)** trong `references/novamira-pro-ops.md` và `SKILL.md`: phân tách rõ phần người dùng cần chuẩn bị 1 lần (~5 phút: cài plugin/license, tạo Application Password, bật Abilities Hub & tắt Read Mode trên Staging) và phần **Agent tự động cấu hình 100%** sau khi kết nối MCP Novamira Pro (Novamira Design, Novamira Memories, Bricks Settings, ACSS/AT alignment, JetEngine data layer và SureRank defaults).
+* **Quy tắc phân bổ thiết kế Trang con** trong `SKILL.md` và `references/novamira-design-workflow.md`:
+  * Nhóm trang động (`Blog Archive`, `Single Blog`, `Project/CPT Archive`, `Single Project/CPT`) thiết kế thẳng thành Bricks Global Templates ở **Stage 2**.
+  * Nhóm trang đặc thù (`Service Landing Pages`, `About`, `Contact`) chốt nhanh dàn ý section rồi dựng thẳng trên Bricks Staging ở **Stage 3** (tái sử dụng 100% Components/BEM Stage 2).
+  * Bổ sung tùy chọn **Stage 1B** (chỉ dùng khi khách bắt buộc duyệt FE tĩnh trang con, kế thừa nguyên `tokens.css` & `styles.css`).
+
 ## [2.0.0] - 2026-11-23
 
 ### Changed

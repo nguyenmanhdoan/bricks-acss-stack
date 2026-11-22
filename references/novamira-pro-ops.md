@@ -2,6 +2,23 @@
 
 Aligned with official documentation (`novamira.ai/docs/`). MCP Novamira Pro is the **site-wide execution engine for the entire WordPress installation** — spanning Bricks Builder, Automatic.css (ACSS), Advanced Themer, JetEngine (100% core), SureRank SEO, optional add-ons (BricksForge, BricksExtras), WordPress core, database, filesystem, and WP-CLI.
 
+## 0. Stage 2.0 — Initial Site Bootstrap Checklist (Human vs. Agent Split)
+
+Immediately after setting up a new Staging WordPress site and connecting MCP Novamira Pro, divide initial setup cleanly so the human only handles credentials/licenses and the Agent automates everything else:
+
+### 0.1. Human Prerequisite (~5 Minutes in `wp-admin` — Cannot Be Automated Safely)
+* **Install & License Plugins:** Install and activate Bricks Builder (+ Child Theme), Automatic.css (ACSS), Advanced Themer, JetEngine, SureRank, Novamira + Novamira Pro (and optional BricksForge / BricksExtras if used on this project), and enter commercial license keys.
+* **Connect MCP:** Create an Administrator **Application Password** in WordPress and register the site URL/credentials in your MCP client (Antigravity / Codex).
+* **Configure Novamira Abilities Hub:** In `wp-admin > Novamira > Abilities Hub`, verify required groups are enabled (**Bricks Specialization**, **Novamira Design**, **Novamira Memories**, **WordPress/WP-CLI/Filesystem**) and ensure **Read Mode is OFF** on Staging (keep Read Mode ON for Production sites).
+
+### 0.2. Agent Automated Bootstrap (Executed Automatically by Agent via Novamira Pro)
+Once connected, the Agent performs the full initial configuration in one pass without asking the user to click through settings manually:
+1. **Stack & Abilities Discovery:** Inspect active plugins, theme versions, and available Abilities Hub tools; confirm whether optional add-ons (BricksForge, BricksExtras) are active.
+2. **Novamira Design & Memories:** Write the project's **Novamira Design** record (Palette, Typography, Spacing, Guidance & Don'ts from approved `design-system.json`) and save site conventions (Website Width, Root Font Size, BEM prefixes, CPT/CCT/Options map) into **Novamira Memories**.
+3. **Bricks Builder Core Settings:** Verify/configure `Cascade layer: ON`, `CSS loading method: External Files`, Theme Styles, and global container width via Bricks Specialization abilities.
+4. **ACSS & Advanced Themer Alignment:** Inspect live ACSS and Advanced Themer options via Novamira Pro; apply ACSS palette/typography/spacing tokens and verify **AT Framework is disabled** (keeping only AT productivity/BEM/Variable Picker tools). *(If a specific ACSS/AT version stores complex encrypted/serialized UI options unsafe for direct DB writes, inspect first and output a clean 1-click JSON import or exact checklist rather than corrupting options).*
+5. **JetEngine & SureRank Initialization:** Scaffold all required JetEngine **Options Pages, Meta Boxes, CPTs, CCTs, Taxonomies, Relations, Glossaries, Query Builder queries** and configure **SureRank** global Title/Meta/Schema defaults.
+
 ## 1. Tool Selection Hierarchy (Use Native Abilities First)
 
 Novamira Pro exposes capabilities managed through the **Abilities Hub** in `wp-admin`. Always prefer the highest-level specialized ability before dropping down to raw primitives:
