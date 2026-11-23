@@ -22,9 +22,10 @@ ACSS tokens are context-agnostic (pure scale, not property-specific). Always ver
   * Brand palettes: `--primary`, `--secondary`, `--accent`, `--base`, `--neutral`, `--shade`
   * Transparencies & shades (when enabled in ACSS): `--primary-dark`, `--primary-light`, `--primary-ultra-light`, `--primary-trans-10` .. `--primary-trans-90`
   * Semantic tokens: `--bg-ultra-light`, `--bg-light`, `--bg-dark`, `--text-dark`, `--text-light`, `--white`, `--black`
-* **Border Radius & Borders:**
+* **Border Radius & Borders (Demo-Gated Only):**
   * `--radius-xs`, `--radius-s`, `--radius-m`, `--radius-l`, `--radius-xl`, `--radius-50`, `--radius-circle`
   * `--border-width`, `--border-color`
+  * **Strict Fidelity Rule:** Only apply `--radius-*`, borders, or shadows when explicitly present in the approved FE Demo / Novamira Design record. If the approved demo uses sharp `0px` corners or borderless images/sections, **never** default to `var(--radius-m)` or decorative card borders/shadows.
 * **Grid Utilities (ACSS Classes):**
   * Standard grids: `.grid--2`, `.grid--3`, `.grid--4`, `.grid--auto-2`, `.grid--auto-3`
   * Responsive overrides: `.grid--l-2`, `.grid--m-1`, `.grid--s-1`

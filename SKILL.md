@@ -67,6 +67,7 @@ Never execute large multi-step builds blindly without user sign-off:
 
 ## Hard Guardrails (All Stages)
 
+* **Strict Fidelity to Approved Demo (Zero Unrequested Styling):** Once an FE Demo is approved, treat its visual grammar as **law** across Stage 2 and Stage 3 (including all inner pages). **NEVER invent or add** unrequested `border-radius`, `border`, `box-shadow`, background fills, glass effects, or extra card wrappers on images, sections, or containers if the approved demo does not have them. If the approved demo uses sharp `0px` edges, borderless images, or flat full-bleed sections, enforce `border-radius: 0`, `border: none`, and `box-shadow: none` strictly — never inject default AI "card polish".
 * **Semantic Bricks DOM & ACSS + BEM:** Native Bricks elements (`section` > `container` > `block`), ACSS tokens (`var(--space-m)`, `var(--primary)`), BEM on Global Classes (never `#id` styling, never Tailwind, never `!important` fighting `@layer bricks`).
 * **Native Tooling Priority:** Core stack (100% of projects): Bricks + ACSS + Advanced Themer + **JetEngine** + **SureRank** via **MCP Novamira Pro**. Optional add-ons (**BricksForge**, **BricksExtras**): verify active via Novamira Pro first; otherwise use native Bricks elements.
 

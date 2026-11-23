@@ -2,6 +2,13 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.3.3] - 2026-11-23
+
+### Added
+* **Quy tắc cứng Tuân thủ 100% nguyên bản Demo (Strict Fidelity to Approved Demo)** trong `SKILL.md`, `references/acss-and-bem.md` và `references/novamira-design-workflow.md`:
+  * Cấm tuyệt đối AI tự ý thêm `border-radius`, viền (`border`), bóng đổ (`box-shadow`), nền phụ hoặc khung card trang trí lên hình ảnh, background và section khi bản Demo đã duyệt không có.
+  * Bắt buộc trích xuất đúng thông số bề mặt (`border-radius`, `border`, `box-shadow`, `background`) từ bản Demo đã chốt và lưu ràng buộc vào **Novamira Memories** trước khi dựng Stage 2–3.
+
 ## [2.3.2] - 2026-11-23
 
 ### Added
