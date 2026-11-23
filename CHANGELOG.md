@@ -2,6 +2,14 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.3.1] - 2026-11-23
+
+### Changed
+* Nâng cấp chuyên sâu `references/humanize-copy.md` bằng tinh hoa chọn lọc từ `viet-humanize`, `blader/humanizer`, `humanizer-skill` và `humanize-skills`:
+  * **Viết đúng ngữ cảnh (Context-Aware Register):** Giữ đúng sắc thái thương hiệu/xưng hô, không ép mọi nội dung thành văn ngắn hoặc suồng sã.
+  * **Bảo toàn dữ kiện (Fact Preservation):** Cấm bịa số liệu/chứng nhận giả, cấm tự nâng mức khẳng định (*"có thể giảm"* -> *"giảm"*, *"hỗ trợ"* -> *"đảm bảo"*).
+  * **Biên tập 2 lượt (Two-Pass Editing):** Lượt 1 lọc sáo ngữ, dấu `—`, mẫu câu *"Không chỉ X mà còn Y"* và bộ ba tính từ; Lượt 2 phá lặp cấu trúc (Anti-Convergence) giữa 8 bài/dự án mẫu và xóa kết bài đạo lý sáo rỗng.
+
 ## [2.3.0] - 2026-11-23
 
 ### Added
