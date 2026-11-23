@@ -16,7 +16,8 @@ bricks-acss-stack/
 │   ├── bricks-academy-core.md               # Chuẩn Bricks Academy (Components, Cascade Layers, Interactions, Code Signatures)
 │   ├── acss-and-bem.md                      # Hệ biến ACSS, BEM, tách vai Advanced Themer & Strict Editor View
 │   ├── bricks-addons-and-jetengine.md       # JetEngine (CPT/CCT/Relations/Query Builder) & BricksForge/BricksExtras
-│   └── surerank-seo.md                      # Chuẩn SEO On-page & Schema JSON-LD duy nhất trên SureRank
+│   ├── surerank-seo.md                      # Chuẩn SEO On-page & Schema JSON-LD duy nhất trên SureRank
+│   └── humanize-copy.md                     # Khử giọng văn AI (Humanize) & chuẩn tạo 8 nội dung mẫu/loại kèm ảnh demo
 ├── README.md
 ├── CHANGELOG.md
 └── LICENSE

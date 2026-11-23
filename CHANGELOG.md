@@ -2,6 +2,12 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.3.0] - 2026-11-23
+
+### Added
+* Tệp mới `references/humanize-copy.md` tích hợp **quy chuẩn khử giọng văn AI (Humanize Copy)** cho cả tiếng Việt lẫn tiếng Anh (cấm các cụm từ sáo rỗng AI, ưu tiên số liệu/đầu việc cụ thể, nhịp câu tự nhiên, CTA rõ ràng, tuyệt đối không dùng Lorem Ipsum).
+* **Bước 2.3 — Tạo dữ liệu mẫu đồng bộ (8 nội dung mẫu / loại + ảnh demo Media ID)** trong `SKILL.md`: thực hiện ngay sau khi chốt concept Trang chủ và dựng xong tầng dữ liệu JetEngine (trước khi dựng Bricks Templates & Trang con), tạo sẵn **8 mục mẫu cho mỗi loại nội dung động** (8 bài viết, 8 dự án, 8 sản phẩm...) phân bổ đều theo Taxonomy và Relations kèm ảnh đồng bộ bảng màu/phong cách để thiết kế lưới 2/3/4 cột, phân trang và bộ lọc mượt mà không vướng quy trình.
+
 ## [2.2.0] - 2026-11-23
 
 ### Added

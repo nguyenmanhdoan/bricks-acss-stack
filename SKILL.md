@@ -23,7 +23,7 @@ Never execute large multi-step builds blindly without user sign-off:
 2. **Pre-Design Info Confirmation:**
    - Before building the **initial Homepage FE Demo** from a brief: confirm Design Read, 3 Dials, proposed palette/typography, and Homepage section outline with the user.
    - Before building **inner/sub-pages** from an approved Homepage Demo: confirm the inner-page list, section outlines, dynamic data needs, and CTA/form requirements with the user.
-3. **Chunked Execution — Done Before Next:** Break execution into discrete atomic steps (e.g., `2.1 Bootstrap & Design System` -> `2.2 JetEngine Data Layer` -> `2.3 Shared Bricks Templates & Components` -> `3.1 Homepage` -> `3.2 Inner Pages` -> `4.1 QA & Handoff`). After each step, report concise results (created files/IDs/preview) and **WAIT for user confirmation** that the step is done before moving to the next step — preventing cascading rework.
+3. **Chunked Execution — Done Before Next:** Break execution into discrete atomic steps (e.g., `2.1 Bootstrap & Design System` -> `2.2 JetEngine Data Layer` -> `2.3 Seed 8 Demo Items/Type + Images` -> `2.4 Shared Bricks Templates & Components` -> `3.1 Homepage` -> `3.2 Inner Pages` -> `4.1 QA & Handoff`). After each step, report concise results (created files/IDs/preview) and **WAIT for user confirmation** that the step is done before moving to the next step — preventing cascading rework.
 
 ## Sequential 4-Stage Production Pipeline
 
@@ -42,10 +42,13 @@ Never execute large multi-step builds blindly without user sign-off:
 * **Actions:**
   1. **Stage 2.0 Initial Bootstrap (Human vs. Agent Split):** Human installs/activates plugins + licenses, creates WP Application Password, connects MCP Novamira Pro, enables required **Abilities Hub** groups (Bricks Specialization, Novamira Design, Memories, WP-CLI), and turns **Read Mode OFF** on Staging. Then the **Agent automatically executes** all site/plugin discovery and configuration below (see [novamira-pro-ops.md](./references/novamira-pro-ops.md)).
   2. **Lock Design System Once:** Agent writes `design-system.json` into **Novamira Design**, configures Bricks Settings (`Cascade layer: ON`, `External Files`) + **ACSS** tokens + Bricks Theme Styles (verifies Advanced Themer Framework is disabled), and saves conventions in **Novamira Memories**.
-  3. **Build Complete JetEngine Data Layer Once:**
+  3. **Build Complete JetEngine Data Layer Once (Step 2.2):**
      - **Options Page (tabbed):** Brand/Logo (Media ID), Global Info (hotline, address, social, shared CTAs), and centralized static content (title, subtitle, description, main images as Media ID) for Homepage & shared sections.
      - **Page Meta Boxes** (if >5–10 static pages) + **CPTs, CCTs, Taxonomies, Relations, Glossaries, and Query Builder queries** for all growing/dynamic data.
-  4. **Build Shared Bricks System & Dynamic Templates Once:** Create Global Templates (`Header`, `Footer`, `Blog Archive`, `Single Blog`, `Project/CPT Archive`, `Single Project/CPT`, `404`), reusable **Bricks Components** (with Properties), and **BEM Global Classes** using Novamira Pro's native Bricks Specialization abilities. *(All Archive/Single inner pages are designed directly here — never built as static FE demos).*
+  4. **Seed Cohesive Demo Content Once (Step 2.3 — After Homepage Concept & Data Layer Are Confirmed):**
+     - Populate **8 realistic sample items per active content type** (8 Posts, 8 Projects, 8 Products, 8 CPT/CCT items as applicable) with cohesive demo images uploaded as **Media IDs** matching the approved Homepage concept/palette, distributed across Taxonomies and **JetEngine Relations**.
+     - Follow [humanize-copy.md](./references/humanize-copy.md) for all sample copy (zero Lorem Ipsum, zero AI clichés) so Bricks loops, grids, pagination, and filters can be designed against real-feeling data smoothly.
+  5. **Build Shared Bricks System & Dynamic Templates Once (Step 2.4):** Create Global Templates (`Header`, `Footer`, `Blog Archive`, `Single Blog`, `Project/CPT Archive`, `Single Project/CPT`, `404`), reusable **Bricks Components** (with Properties), and **BEM Global Classes** using Novamira Pro's native Bricks Specialization abilities. *(All Archive/Single inner pages are designed directly here — never built as static FE demos).*
 
 ### Stage 3 — Multi-Page Implementation (Reuse Only — NO Loop Reset)
 * **When:** Foundation (Stage 2) is ready and building the Homepage + bespoke inner pages (Service Landing Pages, About, Contact).
@@ -75,3 +78,4 @@ Never execute large multi-step builds blindly without user sign-off:
 * ACSS tokens, BEM conventions, Advanced Themer setup & Strict Editor View: [acss-and-bem.md](./references/acss-and-bem.md)
 * JetEngine (100% core: Options Page, CPT, CCT, Relations, Query Builder) & optional BricksForge/BricksExtras: [bricks-addons-and-jetengine.md](./references/bricks-addons-and-jetengine.md)
 * SureRank SEO & Schema standards: [surerank-seo.md](./references/surerank-seo.md)
+* Humanize copy (anti-AI prose) & 8-item demo content seeding standard: [humanize-copy.md](./references/humanize-copy.md)
