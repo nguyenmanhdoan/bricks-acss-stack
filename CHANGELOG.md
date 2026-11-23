@@ -2,6 +2,11 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.3.2] - 2026-11-23
+
+### Added
+* Thêm script `scripts/install-to-workspace.ps1` hỗ trợ cài gọn `bricks-acss-stack` vào `.agents/skills/` của từng dự án thiết kế website (phù hợp mô hình dùng cục bộ theo từng dự án web, để `marketing-seo-stack` chạy toàn cục hằng ngày).
+
 ## [2.3.1] - 2026-11-23
 
 ### Changed
