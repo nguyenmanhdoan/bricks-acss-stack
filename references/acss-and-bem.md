@@ -18,10 +18,11 @@ ACSS tokens are context-agnostic (pure scale, not property-specific). Always ver
   * Body scale: `--text-xs`, `--text-s`, `--text-m`, `--text-l`, `--text-xl`, `--text-xxl`
   * Heading scale: `--h1`, `--h2`, `--h3`, `--h4`, `--h5`, `--h6`
   * Line-height / measure: `--text-m-lh`, `--content-width-safe`, or semantic ch widths (`max-width: 65ch;`)
-* **Colors (Contextual & Brand):**
+* **Colors (Contextual & Brand — Zero Off-Palette Lock):**
   * Brand palettes: `--primary`, `--secondary`, `--accent`, `--base`, `--neutral`, `--shade`
   * Transparencies & shades (when enabled in ACSS): `--primary-dark`, `--primary-light`, `--primary-ultra-light`, `--primary-trans-10` .. `--primary-trans-90`
   * Semantic tokens: `--bg-ultra-light`, `--bg-light`, `--bg-dark`, `--text-dark`, `--text-light`, `--white`, `--black`
+  * **Strict Palette Lock:** Only use colors explicitly approved in the project concept / **Novamira Design** record. Never write raw hex/rgb/hsl values in Bricks settings or `%root%` CSS, never pull unconfigured default ACSS color slots (e.g., default blue/purple), and set SVG icon `fill`/`stroke` to `currentColor` or an approved ACSS variable.
 * **Border Radius & Borders (Demo-Gated Only):**
   * `--radius-xs`, `--radius-s`, `--radius-m`, `--radius-l`, `--radius-xl`, `--radius-50`, `--radius-circle`
   * `--border-width`, `--border-color`

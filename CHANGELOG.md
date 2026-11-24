@@ -2,6 +2,14 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.4.2] - 2026-11-25
+
+### Added
+* **Quy tắc cứng Khóa tuyệt đối Bảng màu Concept (Zero Off-Palette Colors)** trong `SKILL.md`, `references/acss-and-bem.md` và `references/novamira-design-workflow.md`:
+  * Bắt buộc 100% màu sắc trên website (nền, bề mặt, chữ, tiêu đề, nút, hover/focus, badge, viền, overlay, gradient, SVG `fill`/`stroke`) chỉ được lấy từ bảng màu concept đã duyệt trong `design-system.json` / **Novamira Design** / **ACSS** + **Novamira Memories**.
+  * Cấm tuyệt đối mọi mã màu hex/rgb/hsl/named hardcode và cấm dùng nhầm các slot màu mặc định của ACSS (như `--secondary`, `--accent` màu xanh/tím mặc định khi concept không dùng).
+  * Bắt buộc quét kiểm tra màu ngoài bảng (`computed color / backgroundColor / borderColor`) bằng `playwright-cli` trước khi xác nhận hoàn tất bước dựng.
+
 ## [2.4.1] - 2026-11-24
 
 ### Changed
