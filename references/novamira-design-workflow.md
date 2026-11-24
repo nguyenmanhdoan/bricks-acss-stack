@@ -2,6 +2,8 @@
 
 Aligned with **Novamira Design** (`novamira.ai/docs/`, Novamira 1.10.0+) and distilled craft standards (Design Read, Quantitative Dials, Surface Modes, Bounded Verification, Visual Richness Floor, and Measurable UX Floor) adapted strictly for **WordPress + Bricks Builder + ACSS + AT + ASE + JetEngine + SureRank** via **MCP Novamira Pro (OAuth)**.
 
+> **Companion Skill Delegation (Stage 1 & Gate 1B):** Always load and execute the **`agency-web-design`** skill first during Stage 1 and Gate 1B for multi-industry visual blueprints (`industry-archetypes.md`), Vietnamese-safe font pairings & 60-30-10 color scales (`typography-and-color-vn.md`), 12 non-generic section compositions (`anti-slop-and-composition.md`), Art Director critique (`critique-and-polish.md`), and Bricks/ACSS static handoff (`bricks-acss-handoff.md`). This file governs how those approved deliverables bridge cleanly into Novamira Design and Stage 2–4 WordPress deployment.
+
 ## 1. Phase 0 — Brief Inference Before Any Build
 
 Never jump straight into building sections with default LLM aesthetics. Establish five quick decisions first:

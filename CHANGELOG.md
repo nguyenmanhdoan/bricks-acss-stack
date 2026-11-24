@@ -2,6 +2,11 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.4.1] - 2026-11-24
+
+### Changed
+* **Tham chiếu chéo Stage 1 & Gate 1B sang `agency-web-design`:** Cập nhật `SKILL.md` và `references/novamira-design-workflow.md` để Stage 1 và Gate 1B tự động gọi skill đồng hành [`agency-web-design`](https://github.com/nguyenmanhdoan/agency-web-design) làm công cụ thiết kế chính (đa lĩnh vực, chuẩn dấu tiếng Việt, chống AI-slop, rubric Art Director và bàn giao CSS/ACSS/BEM 1-to-1).
+
 ## [2.4.0] - 2026-11-24
 
 ### Added

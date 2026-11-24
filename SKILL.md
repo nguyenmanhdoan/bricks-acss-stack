@@ -30,13 +30,14 @@ Never execute large multi-step builds blindly without user sign-off:
 ## Sequential 4-Stage Production Pipeline
 
 ### Stage 1 — Brief, Homepage FE Demo & Sub-Page Visual Previews (Pre-WordPress)
+* **Primary Design Skill Delegation (Mandatory):** At Stage 1 and Gate 1B, **automatically invoke and follow the `agency-web-design` skill** (`industry-archetypes.md`, `typography-and-color-vn.md`, `anti-slop-and-composition.md`, `critique-and-polish.md`, `bricks-acss-handoff.md`) as the primary design engine. Use [novamira-design-workflow.md](./references/novamira-design-workflow.md) to align Stage 1 deliverables with Stage 2–4 WordPress & Novamira Pro handoff.
 * **Actions:**
-  1. Run **Phase 0 once for the whole project** (1-line Design Read, Surface Modes per page type, 3 Dials, single cohesive SVG icon family, and full sitemap).
-  2. Build a standalone Bricks-ready static Homepage FE Demo (`index.html`, `tokens.css` mirroring ACSS variables, `styles.css` with 1-level BEM classes, `main.js`, DTCG `design-system.json`). Never use Tailwind/Bootstrap.
-  3. Annotate reusable blocks and dynamic loops (`<!-- [BRICKS-COMPONENT: name] -->`, `<!-- [JETENGINE-LOOP: cpt=slug] -->`).
-  4. Verify with `playwright-cli` (`1440x900` + `390x844`).
+  1. Run **Phase 0 once for the whole project** via `agency-web-design` (1-line Design Read, Archetype & Industry Blueprint, Surface Modes per page type, 3 Dials, Vietnamese-safe typography, 60-30-10 ACSS palette, single cohesive SVG icon family, and non-repeating section composition plan + full sitemap).
+  2. Build a standalone Bricks-ready static Homepage FE Demo (`DESIGN.md`, `index.html`, `tokens.css` mirroring ACSS variables, `styles.css` with 1-level BEM classes, `main.js`, DTCG `design-system.json`). Never use Tailwind/Bootstrap/React.
+  3. Annotate reusable blocks and dynamic loops (`<!-- [BRICKS-COMPONENT: name] -->`, `<!-- [JETENGINE-LOOP: cpt=slug] -->`, `<!-- [BRICKS-TEMPLATE: name] -->`).
+  4. Run the `agency-web-design` 5-dimension Art Director self-critique and verify visually with `playwright-cli` (`1440x900` + `390x844`).
 * **GATE 1 (Homepage Sign-Off):** Present the Homepage FE Demo and **STOP for user/client sign-off**.
-* **GATE 1B (Mandatory Sub-Page & Dynamic Template Visual Sign-Off):** Once Homepage is approved, before building sub-pages or Archive/Single templates in WordPress, present the **Sitemap + Section Outlines** and extend the static preview (strictly reusing the approved `tokens.css` & `styles.css` — never re-initializing the design system) to capture Desktop & Mobile screenshots of key inner pages (`About`, `Services`, `Contact`) and representative `Archive` / `Single` layouts. **STOP for user sign-off** before building Bricks templates.
+* **GATE 1B (Mandatory Sub-Page & Dynamic Template Visual Sign-Off):** Once Homepage is approved, before building sub-pages or Archive/Single templates in WordPress, present the **Sitemap + Section Outlines** and extend the static preview using `agency-web-design` (strictly reusing the approved `tokens.css` & `styles.css` — never re-initializing the design system) to capture Desktop & Mobile screenshots of key inner pages (`About`, `Services`, `Contact`) and representative `Archive` / `Single` layouts. **STOP for user sign-off** before building Bricks templates.
 
 ### Stage 2 — WordPress Site Foundation (Run ONCE per Project via MCP Novamira Pro)
 * **2.0 Initial Bootstrap (Human vs. Agent Split):** Human installs/activates plugins + licenses, connects **MCP Novamira Pro (OAuth)**, enables required **Abilities Hub** groups (Bricks Specialization, Novamira Design, Memories, Site Skills, WP-CLI), and turns **Read Mode OFF** on Staging (see [novamira-pro-ops.md](./references/novamira-pro-ops.md)).
@@ -79,7 +80,8 @@ Never execute large multi-step builds blindly without user sign-off:
 
 ## Reference Library (Load Only What Current Stage Needs)
 
-* Stage 1 & Gate 1B (Design Read, 3 Dials, Sub-page Previews, Visual Richness Floor, `playwright-cli` QA): [novamira-design-workflow.md](./references/novamira-design-workflow.md)
+* **Primary Stage 1 & Gate 1B Design Engine (Companion Skill):** Always load `agency-web-design` (multi-industry archetypes, Vietnamese-safe typography, 12-pattern anti-AI-slop composition, Art Director critique & Bricks/ACSS handoff spec) whenever executing Stage 1 or Gate 1B.
+* Stage 1 & Gate 1B WordPress/Novamira Alignment (Design Read, 3 Dials, Sub-page Previews, Visual Richness Floor, `playwright-cli` QA): [novamira-design-workflow.md](./references/novamira-design-workflow.md)
 * Stage 2–4 MCP Novamira Pro (OAuth) & 7-Plugin Configuration Gate + Proof-of-State: [novamira-pro-ops.md](./references/novamira-pro-ops.md)
 * WordPress Core Standards (Appearance > Menus, ASE Baseline, Media Hygiene, `wp-wpcli-and-ops` / `wp-performance` synergy): [wordpress-core-standards.md](./references/wordpress-core-standards.md)
 * Bricks Builder core architecture (Components, Cascade Layers, Interactions, Query Loop, `{echo:}` allowlist, Code Signatures): [bricks-academy-core.md](./references/bricks-academy-core.md)
