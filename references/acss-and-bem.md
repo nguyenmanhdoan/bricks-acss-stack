@@ -1,10 +1,10 @@
 # Automatic.css (ACSS), BEM & Advanced Themer Reference
 
-Use this reference when authoring Bricks global classes, custom CSS, layouts, and theme styles on an ACSS + Advanced Themer site.
+Use this reference when configuring ACSS & Advanced Themer at **Stage 2.1**, authoring Bricks global classes, custom CSS, layouts, and theme styles, and locking the site for client handoff.
 
 ## 1. Automatic.css (ACSS) Core Token System
 
-ACSS tokens are context-agnostic (pure scale, not property-specific). Always verify the site's active ACSS configuration via Novamira Pro if custom colors or extra scales are enabled.
+ACSS tokens are context-agnostic (pure scale, not property-specific). Always verify the site's active ACSS configuration via MCP Novamira Pro and frontend `getComputedStyle` before writing CSS.
 
 * **Spacing (`--space-*`):**
   * Scale: `--space-xxs`, `--space-xs`, `--space-s`, `--space-m`, `--space-l`, `--space-xl`, `--space-xxl`
@@ -31,7 +31,22 @@ ACSS tokens are context-agnostic (pure scale, not property-specific). Always ver
   * Responsive overrides: `.grid--l-2`, `.grid--m-1`, `.grid--s-1`
   * Gaps: `.gap--xs`, `.gap--s`, `.gap--m`, `.gap--l`
 
-## 2. BEM Naming & Styling Rules in Bricks
+## 2. Stage 2.1 Mandatory ACSS + AT Configuration Verification Checklist
+
+Never begin building Templates or Pages while ACSS or AT remain at factory defaults. Verify every item below during **Stage 2.1** (and **Hard Stop** for user import if direct writes cannot safely recompile ACSS/AT):
+
+* **ACSS Verified & Recompiled:**
+  * Website Width (`--content-width`) and Breakpoints synced with Bricks Settings.
+  * Root Font Size (`62.5%` or `100%` — locked consistently in Novamira Memories).
+  * Brand Palette (`primary`, `secondary`, `accent`, `base`, `neutral`, `shade`) + shades/transparencies matching `design-system.json`.
+  * Heading (`h1`–`h6`) & Body Typography Scale, Font Families, and Spacing Scale applied.
+  * Default Border Radius & Button/Form tokens matching approved Demo (e.g., `0px` if sharp editorial demo).
+  * **Frontend Proof-of-State:** After regenerating ACSS & Bricks CSS, verify via `playwright-cli` `eval` that `getComputedStyle(document.documentElement).getPropertyValue('--primary')` and `--content-width` return the exact approved values (proving CSS regenerated, not just saved in DB).
+* **Advanced Themer (AT) Verified:**
+  * **AT Framework = OFF** (Global Colors, Fluid Typography, Fluid Spacing, AT Dark Mode, Container overrides all disabled).
+  * **AT Productivity Tools = ON** (BEM Class Generator, Variable Picker synced with ACSS, Superpower CSS, Class Manager, ID Lock, Plain Classes / Quick Search).
+
+## 3. BEM Naming & Styling Rules in Bricks
 
 * **When to use BEM Global Classes:** Any repeatable component (cards, hero sections, pricing tables, testimonials, feature rows, headers, footers).
 * **When to use ACSS Utility Classes:** Pure layout scaffolding (`.grid--3`, `.gap--m`, `.bg--neutral-ultra-light`) or quick one-off spacing adjustments that do not belong to a reusable component.
@@ -49,7 +64,6 @@ ACSS tokens are context-agnostic (pure scale, not property-specific). Always ver
       flex-direction: column;
       padding: var(--space-l);
       gap: var(--space-m);
-      border-radius: var(--radius-m);
       background-color: var(--white);
     }
     %root%:hover .service-card__title {
@@ -57,7 +71,7 @@ ACSS tokens are context-agnostic (pure scale, not property-specific). Always ver
     }
     ```
 
-## 3. Advanced Themer + ACSS Coexistence & Configuration Rules
+## 4. Advanced Themer + ACSS Coexistence Rules
 
 **Golden Rule:** **ACSS** is the single CSS framework & token engine; **Advanced Themer (AT)** is strictly the Builder UX & productivity layer. Never run both frameworks simultaneously.
 
@@ -71,9 +85,9 @@ ACSS tokens are context-agnostic (pure scale, not property-specific). Always ver
   * **Superpower CSS & Code Recipes:** Autocomplete ACSS variables inside `%root%` custom CSS.
   * **Class Manager & Strict Editor / ID Lock:** Enforce styling on Global Classes rather than element `#id` and audit/clean unused classes.
   * **Builder UX Tweaks:** Quick Search, Structure Panel helpers, and Plain Classes for fast ACSS layout utility assignment (`.grid--3`, `.gap--m`).
-* **Class & Variable Hygiene:** Before creating a new Bricks global class via MCP Novamira Pro, inspect existing global classes to avoid near-duplicates (e.g., `.hero-card` vs `.hero-cards`), and follow the site's configured Bricks breakpoints (Desktop default -> Tablet Portrait -> Mobile Landscape -> Mobile Portrait).
+* **Class & Variable Hygiene:** Before creating a new Bricks global class via MCP Novamira Pro, inspect existing global classes to avoid near-duplicates (e.g., `.hero-card` vs `.hero-cards`), and follow the site's configured Bricks breakpoints.
 
-## 4. Client Handoff — Strict Editor View (Advanced Themer)
+## 5. Client Handoff — Strict Editor View (Advanced Themer)
 
 Before handing a completed website over to the client, configure **Strict Editor View** in Advanced Themer to protect the design system:
 

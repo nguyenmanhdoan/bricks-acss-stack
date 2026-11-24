@@ -2,6 +2,29 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.4.0] - 2026-11-24
+
+### Added
+* **Tệp mới `references/wordpress-core-standards.md`:** Khóa cứng chuẩn WordPress Core khi triển khai Bricks Builder:
+  * **WP Native Menu Mandate:** Đề xuất cây Menu Header & Footer theo chủ đề website để người dùng chốt -> tạo menu thật trong `Appearance > Menus` -> gọi trực tiếp qua Bricks `Nav Menu` / `Nav Nestable` / `WP Menu` (dùng chung 1 Primary Menu cho cả Desktop & Mobile Drawer), **tuyệt đối cấm hardcode Text Link**.
+  * **ASE (Admin and Site Enhancements) Baseline:** Checklist cấu hình bắt buộc ngay Stage 2.1 (tắt XML-RPC, ẩn WP version, bật SVG Upload có sanitize, Image Upload Control, tắt Comments nếu không dùng, giới hạn revisions, kiểm tra ASE SMTP).
+  * **Media Library & SVG Hygiene:** Bắt buộc gắn toàn bộ ảnh và SVG bằng **Media ID** trong Media Library (cấm hotlink URL ngoài), dùng duy nhất 1 bộ SVG icon đồng nhất `stroke-width`.
+  * **Phối hợp WordPress Agent Skills:** Quy ước kết hợp chọn lọc với `wp-wpcli-and-ops` và `wp-performance` (không áp dụng quy tắc Gutenberg/Block Theme lên Bricks).
+* **Gate 1B (Bắt buộc duyệt Mục lục + Demo hình ảnh cho Trang con & Dynamic Templates)** trong `SKILL.md` và `references/novamira-design-workflow.md`:
+  * Chấm dứt tình trạng AI tự ý dựng template/trang con sơ sài (thiếu icon, thiếu ảnh) trên Bricks. Bắt buộc trình bày **Mục lục trang + Section Outline chi tiết** và xuất bản xem trước HTML/CSS (tái sử dụng `tokens.css` & `styles.css` đã duyệt) kèm ảnh chụp Desktop (`1440x900`) + Mobile (`390x844`) qua `playwright-cli` để user chốt mẫu trước khi build Bricks.
+  * Bổ sung **Visual Richness Floor** chống dựng template trơ trụi.
+* **Gate 2.1 — Cấu hình bắt buộc đủ 7 Plugin + Proof-of-State** trong `SKILL.md`, `references/novamira-pro-ops.md` và `references/acss-and-bem.md`:
+  * Khóa cứng cấu hình đầy đủ ngay đầu Stage 2 cho cả 7 plugin: **NOVAMIRA** (đủ 3 trụ cột `Design` + `Memories` + `Site Skills` qua **MCP Novamira Pro OAuth**), **BRICKS**, **ACSS**, **AT** (TẮT AT Framework, BẬT bộ công cụ productivity), **ASE**, **SURERANK**, **JETENGINE**.
+  * Áp dụng luật **Hard Stop** cho ACSS & AT (nếu không tự ghi/compile an toàn được thì phải dừng xuất JSON/thông số để user áp dụng) và yêu cầu **Proof-of-State** (đọc ngược option + kiểm tra `getComputedStyle` biến `--primary`, `--content-width` trên frontend qua `playwright-cli`).
+* **JetEngine Minimalist Decision Matrix (Gate 2.2 — Anti-Overengineering)** trong `references/bricks-addons-and-jetengine.md`:
+  * Bắt buộc trình bày bảng đề xuất Data Model (`WordPress Core` vs. `JetEngine`) cho user duyệt trước khi tạo bất kỳ CPT/CCT/Relation/Glossary/Options Page nào.
+  * Khóa ranh giới rõ ràng: Blog dùng `Posts`, trang tĩnh dùng `Pages`, menu dùng `Appearance > Menus`, tối đa 1 JetEngine Options Page gọn cho Global Brand Info.
+* **Form bắt buộc hoạt động thực tế (Contact Form & Footer Newsletter Form)** trong `SKILL.md` và `references/bricks-addons-and-jetengine.md`:
+  * Trang Liên hệ bắt buộc có **Contact Form**; Footer bắt buộc có **Newsletter Form** (Bricks Native Form hoặc BricksForge Pro Forms), đủ validation, Honeypot/Turnstile, **Submission Storage** (không mất lead) và kiểm thử submit trong Stage 4 QA.
+
+### Changed
+* Cập nhật `SKILL.md` và `README.md` đồng bộ toàn bộ stack 7 plugin qua **MCP Novamira Pro (OAuth)** và cấu trúc thư mục mới.
+
 ## [2.3.3] - 2026-11-23
 
 ### Added

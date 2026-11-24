@@ -2,22 +2,25 @@
 
 Skill chuẩn hóa theo đặc tả **Agent Skills** (Progressive Disclosure) dành cho **Google Antigravity**, Claude Code và Cursor khi thiết kế, xây dựng và vận hành website WordPress trên bộ stack:
 
-* **Lõi cố định (100% dự án):** WordPress + Bricks Builder + Automatic.css (ACSS) + Advanced Themer + JetEngine + SureRank SEO qua **MCP Novamira Pro**.
+* **Lõi cố định (100% dự án):** WordPress + Bricks Builder + Automatic.css (ACSS) + Advanced Themer (AT) + Admin and Site Enhancements (ASE) + JetEngine + SureRank SEO qua **MCP Novamira Pro (OAuth)**.
 * **Add-on tùy chọn theo dự án:** BricksForge (Pro Forms, GSAP) và BricksExtras (tự động kiểm tra trạng thái cài đặt trước khi sử dụng).
 
 ## Cấu trúc thư mục
 
 ```text
 bricks-acss-stack/
-├── SKILL.md                                 # Quy tắc lõi & điều hướng Progressive Disclosure
+├── SKILL.md                                 # Quy tắc lõi, các Gate phê duyệt & điều hướng Progressive Disclosure
 ├── references/
-│   ├── novamira-pro-ops.md                  # Quy trình vận hành MCP Novamira Pro (Abilities Hub, Read Mode, Memories)
-│   ├── novamira-design-workflow.md          # Quy trình Novamira Design & thiết kế web mới chống AI slop
+│   ├── novamira-pro-ops.md                  # Vận hành MCP Novamira Pro (OAuth), Gate cấu hình 7 plugin & Proof-of-State
+│   ├── novamira-design-workflow.md          # Quy trình Novamira Design, Gate 1B (duyệt trang con/template bằng ảnh) & Visual Richness Floor
+│   ├── wordpress-core-standards.md          # Chuẩn WordPress Core (Appearance > Menus, ASE baseline, Media ID, phối hợp wp-wpcli-and-ops/wp-performance)
 │   ├── bricks-academy-core.md               # Chuẩn Bricks Academy (Components, Cascade Layers, Interactions, Code Signatures)
-│   ├── acss-and-bem.md                      # Hệ biến ACSS, BEM, tách vai Advanced Themer & Strict Editor View
-│   ├── bricks-addons-and-jetengine.md       # JetEngine (CPT/CCT/Relations/Query Builder) & BricksForge/BricksExtras
+│   ├── acss-and-bem.md                      # Hệ biến ACSS, checklist xác minh ACSS/AT, BEM & Strict Editor View
+│   ├── bricks-addons-and-jetengine.md       # Ma trận quyết định JetEngine chống lạm dụng, Form Liên hệ/Newsletter & BricksForge/BricksExtras
 │   ├── surerank-seo.md                      # Chuẩn SEO On-page & Schema JSON-LD duy nhất trên SureRank
 │   └── humanize-copy.md                     # Khử giọng văn AI (Humanize) & chuẩn tạo 8 nội dung mẫu/loại kèm ảnh demo
+├── scripts/
+│   └── install-to-workspace.ps1             # Script cài nhanh skill vào .agents/skills/ của từng dự án
 ├── README.md
 ├── CHANGELOG.md
 └── LICENSE

@@ -1,14 +1,14 @@
 # Novamira Design & Anti-AI-Slop Website Creation Workflow
 
-Aligned with **Novamira Design** (`novamira.ai/docs/`, Novamira 1.10.0+) and distilled craft standards (Design Read, Quantitative Dials, Surface Modes, Bounded Verification, and Measurable UX Floor) adapted strictly for **WordPress + Bricks Builder + ACSS + JetEngine + SureRank**.
+Aligned with **Novamira Design** (`novamira.ai/docs/`, Novamira 1.10.0+) and distilled craft standards (Design Read, Quantitative Dials, Surface Modes, Bounded Verification, Visual Richness Floor, and Measurable UX Floor) adapted strictly for **WordPress + Bricks Builder + ACSS + AT + ASE + JetEngine + SureRank** via **MCP Novamira Pro (OAuth)**.
 
 ## 1. Phase 0 — Brief Inference Before Any Build
 
-Never jump straight into building sections with default LLM aesthetics. Establish four quick decisions first:
+Never jump straight into building sections with default LLM aesthetics. Establish five quick decisions first:
 
 * **One-Line Design Read & Pre-Build Confirmation:** State a concise summary before creating tokens or layouts:
   *"Reading this as: `<page kind>` for `<audience>`, in `<Surface Mode>` mode, with a `<vibe>` visual language."*
-  Present the proposed **3 Dials, palette/typography direction, and section outline**, and **WAIT for user confirmation** before generating the FE Demo (or before designing inner pages from an approved Homepage Demo).
+  Present the proposed **3 Dials, palette/typography direction, single cohesive SVG icon family, and full sitemap / Homepage section outline**, and **WAIT for user confirmation** before generating the Homepage FE Demo.
 * **Surface Mode (Per Page, Not Whole Site):**
   * `Persuade`: Landing pages, services, pricing, campaigns — visual clarity and single primary CTA lead.
   * `Read`: Blog posts, guides, documentation, case studies — scannable typography and reading comfort lead.
@@ -35,17 +35,22 @@ Store the finalized direction directly in WordPress via **Novamira Design** (mac
    * Alternate section compositions purposefully (asymmetric 40/60 splits, typographic statements, hierarchical bento grids, concrete proof/metrics bands, real photography).
    * Reserve accent color for the single primary CTA focus per viewport.
 
-## 3. Sequential Stage Alignment (No Per-Page Loop Reset)
+## 3. Sequential Stage Alignment & Mandatory Sub-Page Visual Gate (Gate 1B)
 
-Follow the 4-stage pipeline in `SKILL.md` strictly in order — **never repeat Stage 1 or Stage 2 when building sub-pages**:
+Follow the 4-stage pipeline in `SKILL.md` strictly in order — **never re-initialize the design system when building sub-pages**:
 
-1. **Stage 1 (FE Demo & Art Direction — Run ONCE):** Complete Phase 0 (Design Read, Surface Modes, 3 Dials), build the standalone Bricks-ready FE Demo (`index.html`, `tokens.css`, `styles.css`, `main.js`, `design-system.json`), quick-check via `playwright-cli`, and **STOP at Gate 1** for client approval. *(Optional Stage 1B only if client strictly requires static inner-page previews: add bespoke pages reusing the exact same `tokens.css` & `styles.css`; never demo Archive/Single templates statically).*
-2. **Stage 2 (WordPress Bootstrap & Foundation — Run ONCE after Demo Approval):** Execute Stage 2.0 Bootstrap via Novamira Pro, write the **Novamira Design** record from `design-system.json`, sync tokens into **ACSS** + Bricks Theme Styles, save conventions in **Novamira Memories**, create the full **JetEngine** data layer (Options Page + CPT/CCT/Relations/Queries), and build all shared **Bricks Components, BEM Global Classes, and Dynamic Templates** (`Header`, `Footer`, `Blog Archive`, `Single Blog`, `Project/CPT Archive`, `Single Project/CPT`, `404`).
-3. **Stage 3 (Homepage & Bespoke Inner Pages — Reuse Only):** For bespoke inner pages not designed in Stage 1 (Service Landing Pages, About, Contact), confirm a concise **section outline** first, then assemble Homepage and all bespoke inner pages directly on Bricks Staging in `draft` status strictly reusing Stage 2 Components, BEM Global Classes, ACSS tokens, and JetEngine bindings. Configure **SureRank** SEO/Schema per page.
-4. **Stage 4 (Batched Bounded Verification & Handoff — Run ONCE for Whole Site):**
-   * Cross-check built pages against the **Novamira Design** record (catch off-palette colors, hardcoded pixel/rem values, font drift, or AI-slop repetition).
-   * Inspect **Homepage + representative sub-pages on desktop (`1440x900`) + mobile (`390x844`) together in one batched round** using **`playwright-cli`** (`open`, `resize`, `screenshot`, `console error`, `eval` for horizontal overflow/broken images/dataLayer events, `close`), or via Novamira Visual / Chrome DevTools. Fix all findings in one batch, confirm with **at most one more round**, and stop.
-   * Verify single `<h1>`, heading hierarchy, and **SureRank** metadata/Schema, then enable **Strict Editor View** in Advanced Themer for client roles before handoff.
+1. **Stage 1 (Homepage FE Demo — Run ONCE):** Complete Phase 0 (Design Read, Surface Modes, 3 Dials, SVG icon family, sitemap), build the standalone Bricks-ready Homepage FE Demo (`index.html`, `tokens.css`, `styles.css`, `main.js`, `design-system.json`), verify via `playwright-cli`, and **STOP at Gate 1** for client/user sign-off.
+2. **Gate 1B (MANDATORY Sub-Page & Dynamic Template Visual Approval — Never Skip):**
+   * **Before building ANY inner page (`About`, `Services`, `Contact`, etc.) or Dynamic Template (`Blog/CPT Archive`, `Single`, `404`) in Bricks**, you MUST:
+     1. Present the **Sitemap & detailed Section Outline** for each sub-page and dynamic template (listing exact sections, layout composition, SVG icon & image slots, dynamic data fields, and CTA/form placement).
+     2. Build static HTML/CSS visual previews **strictly reusing the approved `tokens.css` & `styles.css`** (zero token re-creation) and capture **full-page screenshots on Desktop (`1440x900`) and Mobile (`390x844`) via `playwright-cli`**.
+     3. Present the outline + screenshots to the user and **STOP for explicit approval** before touching Bricks Templates or Pages.
+3. **Stage 2 (WordPress 7-Plugin Foundation & Shared Templates — Run ONCE):** Execute Stage 2.0/2.1 (7-Plugin Mandatory Config + Proof-of-State), Gate 2.2 (JetEngine Data Model Approval), Step 2.3 (8 demo items/type + Media Library Media IDs), and Step 2.4 (Header/Footer Menu Approval -> WP Native Menus + Bricks Global Templates matching approved Gate 1B screenshots).
+4. **Stage 3 (Homepage & Bespoke Inner Pages — Reuse Only):** Assemble Homepage and approved inner pages (`About`, `Services`, `Contact` with mandatory Contact Form) directly on Bricks Staging in `draft` status strictly reusing Stage 2 Components, BEM Global Classes, ACSS tokens, Media IDs, and approved JetEngine bindings. Configure **SureRank** SEO/Schema per page.
+5. **Stage 4 (Batched Bounded Verification & Handoff — Run ONCE for Whole Site):**
+   * Cross-check built pages against the **Novamira Design** record and Gate 1B screenshots (catch off-palette colors, hardcoded pixel/rem values, bare/stripped-down templates, or AI-slop repetition).
+   * Inspect **Homepage + representative sub-pages/Archive/Single on desktop (`1440x900`) + mobile (`390x844`) together in one batched round** using **`playwright-cli`** (`open`, `resize`, `screenshot`, `console error`, `eval` for computed ACSS tokens, horizontal overflow, broken images, Mobile Menu drawer open/close, Contact & Newsletter Form submission, and `dataLayer` events, `close`). Fix all findings in one batch, confirm with **at most one more round**, and stop.
+   * Verify single `<h1>`, heading hierarchy, **SureRank** metadata/Schema, Form Submission Storage & ASE SMTP, then enable **Strict Editor View** in Advanced Themer for client roles before handoff.
 
 ## 4. Steering Vocabulary (On-Demand Refinement Verbs)
 
@@ -57,27 +62,32 @@ When refining an existing Bricks page or section, respond accurately to these ta
 * `bolder` / `quieter`: Push visual contrast and hierarchy higher when bland, or dial back visual noise when cluttered.
 * `distill` / `clarify`: Strip redundant elements/cards to essentials, or sharpen headlines, button labels, and form error copy.
 
-## 5. Quantitative UX & Craft Quality Floor (Pre-Ship Checklist)
+## 5. Visual Richness Floor & Quantitative UX Quality Floor (Pre-Ship Checklist)
 
+* **Visual Richness Floor (Anti-Skeleton Template Mandate):**
+  * Never ship bare, text-only sub-pages or Archive/Single templates. Every inner page and dynamic template must carry the same craft density as the approved Homepage:
+    * **Cohesive SVG Iconography:** Single SVG icon family with uniform `stroke-width` site-wide (uploaded to WP Media Library via ASE SVG Sanitize or native Bricks SVG — never mixed icon libraries, never emoji placeholders).
+    * **Cohesive Media (Media IDs Only):** Real/demo images matching the approved palette & consistent `aspect-ratio` uploaded to **WordPress Media Library** (attached as **Media ID** — zero external hotlinks).
+    * **Clear Visual Hierarchy:** Structured eyebrow/category badges, metadata rows, scannable scannability blocks, hover/focus states, and intentional ACSS spacing rhythm.
 * **Contrast & Readability:** Text contrast `>= 4.5:1` (`>= 3:1` for large text); mobile body font `>= 16px` (prevents iOS auto-zoom); desktop body line length `60–75ch` (`35–60ch` on mobile).
 * **Touch & Responsive Stability:** Interactive touch targets `>= 44x44px` with `>= 8px` gap; use `min-height: 100dvh` (never `100vh`) on full-height Heroes to prevent iOS Safari address-bar jump; zero horizontal scroll on mobile.
-* **Icons, Motion & Core Web Vitals:** Single cohesive SVG icon family with uniform `strokeWidth` site-wide; base UI transitions `150–300ms` respecting `prefers-reduced-motion`; WebP/AVIF images with explicit `width`/`height` (and `loading="eager"` + `fetchpriority="high"` on hero LCP) to keep `CLS < 0.1`.
+* **Motion & Core Web Vitals:** Base UI transitions `150–300ms` respecting `prefers-reduced-motion`; WebP/AVIF images with explicit `width`/`height` (and `loading="eager"` + `fetchpriority="high"` on hero LCP) to keep `CLS < 0.1`.
 
 ## 6. Mode A — Standalone Bricks-Ready FE Demo (Pre-WordPress) & 1-to-1 Handoff
 
-Use **Mode A** when pitching or getting client visual approval before setting up WordPress and MCP Novamira Pro. Every demo must be engineered for zero-rewrite handoff into Bricks + ACSS:
+Use **Mode A** for both the Homepage (Gate 1) and Sub-Pages / Dynamic Template Previews (Gate 1B) before building in Bricks:
 
 ### 6.1. Standalone Demo Structure & Rules
-* **Clean Static Bundle:** Output pure semantic HTML5 + CSS + lightweight vanilla JS (e.g., `index.html`, `tokens.css`, `styles.css`, `main.js`, `design-system.json`). **Never use Tailwind, Bootstrap, or React** so styles map 1-to-1 to Bricks + ACSS.
+* **Clean Static Bundle:** Output pure semantic HTML5 + CSS + lightweight vanilla JS (`index.html`, sub-page/template preview HTMLs, `tokens.css`, `styles.css`, `main.js`, `design-system.json`). **Never use Tailwind, Bootstrap, or React** so styles map 1-to-1 to Bricks + ACSS.
 * **ACSS-Mirror Tokens (`tokens.css` + DTCG `design-system.json`):** Define `:root` variables using exact **Automatic.css** token names (`--primary`, `--secondary`, `--accent`, `--base`, `--neutral`, `--space-xs`..`--space-xxl`, `--section-space-*`, `--text-*`, `--h1`..`--h6`, `--radius-*`, `--content-width`), plus a DTCG-compatible `design-system.json` ready for direct import into **Novamira Design**.
 * **Bricks-Ready DOM & BEM:** Build every section using Bricks' native hierarchy (`section` > `.container` > `.grid--*` / `.block`) and 1-level **BEM Global Classes** (`.service-card`, `.service-card__title`, `.service-card--featured`) consuming only `var(--*)` ACSS tokens.
 * **Handoff Annotations:** Mark reusable blocks and dynamic loops directly in HTML comments:
   * `<!-- [BRICKS-COMPONENT: service-card] -->`
   * `<!-- [JETENGINE-LOOP: cpt=services] -->`
-  * `<!-- [BRICKS-TEMPLATE: header / footer] -->`
-* **Apply Full Quality Controls:** Run Phase 0 (Design Read, Surface Mode, 3 Dials), Bounded Verification using **`playwright-cli`** (desktop `1440x900` + mobile `390x844` screenshots, `console error`, horizontal overflow check), and the Section 5 UX Quality Floor before sending the preview to the client.
+  * `<!-- [BRICKS-TEMPLATE: header / footer / archive / single] -->`
+* **Apply Full Quality Controls:** Run Phase 0, Bounded Verification using **`playwright-cli`** (desktop `1440x900` + mobile `390x844` screenshots, `console error`, horizontal overflow check), and Section 5 floors before sending previews to the user/client.
 
-### 6.2. Converting Approved Mode A Demo -> Mode B (WordPress + Novamira Pro)
-1. **Sync Design Tokens & Fidelity Lock:** Inspect the approved demo's exact computed styles (`border-radius`, `border`, `box-shadow`, `background`, `padding`, font sizes) and import `design-system.json` into **Novamira Design**, mirror `tokens.css` values into **ACSS** + Bricks Theme Styles, and save explicit visual constraints (e.g., *"sharp 0px corners on all images/sections, no card borders/shadows"*) into **Novamira Memories**.
-2. **Map 1-to-1 to Bricks & JetEngine (Zero Unrequested Styling):** Convert each `<!-- [BRICKS-COMPONENT] -->` block into a native Bricks Component (with Properties), register the exact **BEM Global Classes** (preserving exact corner radius, flat/borderless surfaces, and backgrounds — never injecting unrequested `border-radius`, borders, or shadows), and wire `<!-- [JETENGINE-LOOP] -->` sections to JetEngine CPTs/CCTs and Query Builder.
-3. **Finalize & Handoff:** Configure **SureRank** SEO/Schema, flush Bricks CSS/site caches, run Bounded Verification on staging, and enable Advanced Themer **Strict Editor View** for client delivery.
+### 6.2. Converting Approved Mode A Demo -> Mode B (WordPress + MCP Novamira Pro)
+1. **Sync Design Tokens & Fidelity Lock:** Inspect the approved demo's exact computed styles (`border-radius`, `border`, `box-shadow`, `background`, `padding`, font sizes) and import `design-system.json` into **Novamira Design**, mirror `tokens.css` values into **ACSS** + Bricks Theme Styles (verifying regenerated CSS on frontend), and save explicit visual constraints (e.g., *"sharp 0px corners on all images/sections, no card borders/shadows, Lucide 1.5px icon family"*) into **Novamira Memories**.
+2. **Map 1-to-1 to Bricks, Native Menus & JetEngine:** Convert each `<!-- [BRICKS-COMPONENT] -->` block into a native Bricks Component (with Properties), bind Header/Footer menus strictly to **Appearance > Menus**, register exact **BEM Global Classes** (preserving exact corner radius, flat/borderless surfaces, icons, and Media IDs), wire approved **JetEngine** queries, and include mandatory Contact & Newsletter Forms.
+3. **Finalize & Handoff:** Configure **SureRank** SEO/Schema, regenerate ACSS & Bricks CSS + flush caches, run Bounded Verification on staging, and enable Advanced Themer **Strict Editor View** for client delivery.
