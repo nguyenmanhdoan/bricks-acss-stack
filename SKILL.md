@@ -4,18 +4,19 @@ description: >-
   Use this skill whenever designing, building, auditing, or modifying WordPress
   websites built with Bricks Builder, Automatic.css (ACSS), Advanced Themer (AT),
   Admin and Site Enhancements (ASE), JetEngine, SureRank SEO, and optional
-  BricksForge/BricksExtras via MCP Novamira Pro (OAuth), OR when creating a
-  standalone Bricks-ready FE Demo / static HTML-CSS-JS prototype (with ACSS-mirror
-  tokens and BEM) for client approval prior to WordPress deployment. Enforces a
-  sequential 4-stage production pipeline with mandatory visual approval gates for
-  both Homepage and sub-pages/templates, 7-plugin configuration verification,
-  native WordPress menu standards, mandatory Contact/Newsletter forms, and
-  anti-overengineering JetEngine governance.
+  BricksForge/BricksExtras via Novamira Pro (`novamira` CLI on Antigravity or
+  MCP OAuth), OR when creating a standalone Bricks-ready FE Demo / static
+  HTML-CSS-JS prototype (with ACSS-mirror tokens and BEM) for client approval
+  prior to WordPress deployment. Enforces a sequential 4-stage production
+  pipeline with mandatory visual approval gates for both Homepage and
+  sub-pages/templates, 7-plugin configuration verification, native WordPress
+  menu standards, mandatory Contact/Newsletter forms, and anti-overengineering
+  JetEngine governance.
 ---
 
-# Bricks Builder + ACSS + AT + ASE + JetEngine + SureRank Stack (via MCP Novamira Pro)
+# Bricks Builder + ACSS + AT + ASE + JetEngine + SureRank Stack (via Novamira Pro)
 
-Follow this **linear 4-stage production workflow** via **MCP Novamira Pro (OAuth)**. **Detect the project's current stage first** and execute only that stage — **NEVER restart Stage 1 (Design System creation) or Stage 2 when building inner/sub-pages.**
+Follow this **linear 4-stage production workflow** via **Novamira Pro** (**`novamira` CLI** on Google Antigravity, or MCP OAuth on MCP-connected clients). **Detect the project's current stage first** and execute only that stage — **NEVER restart Stage 1 (Design System creation) or Stage 2 when building inner/sub-pages.**
 
 ## Mandatory Approval & Step-Gate Governance (Anti-Runaway Rule)
 
@@ -39,8 +40,8 @@ Never execute large multi-step builds blindly without user sign-off:
 * **GATE 1 (Homepage Sign-Off):** Present the Homepage FE Demo and **STOP for user/client sign-off**.
 * **GATE 1B (Mandatory Sub-Page & Dynamic Template Visual Sign-Off):** Once Homepage is approved, before building sub-pages or Archive/Single templates in WordPress, present the **Sitemap + Section Outlines** and extend the static preview using `agency-web-design` (strictly reusing the approved `tokens.css` & `styles.css` — never re-initializing the design system) to capture Desktop & Mobile screenshots of key inner pages (`About`, `Services`, `Contact`) and representative `Archive` / `Single` layouts. **STOP for user sign-off** before building Bricks templates.
 
-### Stage 2 — WordPress Site Foundation (Run ONCE per Project via MCP Novamira Pro)
-* **2.0 Initial Bootstrap (Human vs. Agent Split):** Human installs/activates plugins + licenses, connects **MCP Novamira Pro (OAuth)**, enables required **Abilities Hub** groups (Bricks Specialization, Novamira Design, Memories, Site Skills, WP-CLI), and turns **Read Mode OFF** on Staging (see [novamira-pro-ops.md](./references/novamira-pro-ops.md)).
+### Stage 2 — WordPress Site Foundation (Run ONCE per Project via Novamira Pro)
+* **2.0 Initial Bootstrap (Human vs. Agent Split):** Human installs/activates plugins + licenses, connects site via **`novamira` CLI** (`novamira auth` / `novamira sites` on Antigravity) or MCP OAuth, enables required **Abilities Hub** groups (Bricks Specialization, Novamira Design, Memories, Site Skills, WP-CLI), and turns **Read Mode OFF** on Staging (see [novamira-pro-ops.md](./references/novamira-pro-ops.md)).
 * **2.1 Mandatory 7-Plugin Stack Configuration Gate + Proof-of-State (Hard Stop):** Configure and verify ALL 7 core plugins BEFORE creating data or pages:
   1. **NOVAMIRA:** Update all 3 pillars — **Novamira Design** (`design-system.json`), **Novamira Memories** (stack config, breakpoints, ACSS tokens, icon family, BEM prefixes, visual fidelity rules), and **Novamira Site Skills** (project rules if enabled).
   2. **BRICKS:** `Cascade layer: ON`, `CSS loading method: External Files`, Theme Styles, container width matching ACSS, verify Child Theme.
@@ -85,7 +86,7 @@ Never execute large multi-step builds blindly without user sign-off:
 
 * **Primary Stage 1 & Gate 1B Design Engine (Companion Skill):** Always load `agency-web-design` (multi-industry archetypes, Vietnamese-safe typography, 12-pattern anti-AI-slop composition, Art Director critique & Bricks/ACSS handoff spec) whenever executing Stage 1 or Gate 1B.
 * Stage 1 & Gate 1B WordPress/Novamira Alignment (Design Read, 3 Dials, Sub-page Previews, Visual Richness Floor, `playwright-cli` QA): [novamira-design-workflow.md](./references/novamira-design-workflow.md)
-* Stage 2–4 MCP Novamira Pro (OAuth) & 7-Plugin Configuration Gate + Proof-of-State: [novamira-pro-ops.md](./references/novamira-pro-ops.md)
+* Stage 2–4 Novamira Pro (`novamira` CLI on Antigravity / MCP OAuth) & 7-Plugin Configuration Gate + Proof-of-State: [novamira-pro-ops.md](./references/novamira-pro-ops.md)
 * WordPress Core Standards (Appearance > Menus, ASE Baseline, Media Hygiene, `wp-wpcli-and-ops` / `wp-performance` synergy): [wordpress-core-standards.md](./references/wordpress-core-standards.md)
 * Bricks Builder core architecture (Components, Cascade Layers, Interactions, Query Loop, `{echo:}` allowlist, Code Signatures): [bricks-academy-core.md](./references/bricks-academy-core.md)
 * ACSS tokens, BEM conventions, Advanced Themer setup & Strict Editor View: [acss-and-bem.md](./references/acss-and-bem.md)

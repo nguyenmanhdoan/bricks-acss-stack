@@ -1,14 +1,29 @@
-# MCP Novamira Pro (OAuth) — Official Operations & 7-Plugin Stack Protocol
+# Novamira Pro (`novamira` CLI / MCP) — Official Operations & 7-Plugin Stack Protocol
 
-Aligned with official documentation (`novamira.ai/docs/`). **MCP Novamira Pro (OAuth)** is the primary site-wide execution engine for the entire WordPress installation — spanning **Novamira**, **Bricks Builder**, **Automatic.css (ACSS)**, **Advanced Themer (AT)**, **Admin and Site Enhancements (ASE)**, **JetEngine**, **SureRank SEO**, optional add-ons (BricksForge, BricksExtras), WordPress core, database, filesystem, and WP-CLI.
+Aligned with official documentation (`novamira.ai/docs/`). **Novamira Pro** is the primary site-wide execution engine for the entire WordPress installation — spanning **Novamira**, **Bricks Builder**, **Automatic.css (ACSS)**, **Advanced Themer (AT)**, **Admin and Site Enhancements (ASE)**, **JetEngine**, **SureRank SEO**, optional add-ons (BricksForge, BricksExtras), WordPress core, database, filesystem, and WP-CLI.
+
+## 0.0. Antigravity Connection Transport — `novamira` CLI (REST-First)
+
+On **Google Antigravity**, connect and execute all Novamira Pro WordPress Abilities through **`novamira` CLI** (`@novamira/cli`) in the terminal rather than expecting an MCP server tool. The CLI accesses the exact same Novamira Pro Abilities with lower token overhead:
+
+* **Verify Connection & Site Profile:** `novamira sites` (list configured site profiles) and `novamira --site <name> doctor` (verify auth/health).
+* **Discover & Inspect Abilities (Before Running):**
+  * `novamira --site <name> discover --json` — list all active abilities enabled in Abilities Hub (Bricks, Novamira Design/Memories, WordPress, WP-CLI, Filesystem).
+  * `novamira --site <name> describe <ability> --json` — inspect exact required parameters/schema before invoking.
+* **Execute Abilities Cleanly:**
+  * `novamira --site <name> run <ability> ... --json` — run ability and emit clean single-JSON output (`--timeout 60000` for heavy operations).
+  * **Destructive Flag Guardrail:** **NEVER** pass `--yes` for destructive operations without explicit user confirmation.
+* **Load Site Skills & Upload Files:**
+  * `novamira --site <name> skill` — load site-level Novamira Site Skills at session start.
+  * `novamira --site <name> upload <local> <remote>` — upload local assets/media cleanly before registering Media IDs.
 
 ## 0. Stage 2.0 & 2.1 — Mandatory 7-Plugin Configuration Gate + Proof-of-State
 
-Immediately after setting up a Staging WordPress site and connecting **MCP Novamira Pro (OAuth)**, complete Stage 2.0 (Human) and Stage 2.1 (Agent) in full. **NEVER skip or leave plugins at default settings before building data or pages.**
+Immediately after setting up a Staging WordPress site and connecting **Novamira Pro** (`novamira` CLI on Antigravity or MCP OAuth on MCP clients), complete Stage 2.0 (Human) and Stage 2.1 (Agent) in full. **NEVER skip or leave plugins at default settings before building data or pages.**
 
 ### 0.1. Stage 2.0 — Human Prerequisite (~5 Minutes in `wp-admin`)
 * **Install & License Plugins:** Install and activate Bricks Builder (+ Child Theme), Automatic.css (ACSS), Advanced Themer (AT), Admin and Site Enhancements (ASE), JetEngine, SureRank, Novamira + Novamira Pro (and optional BricksForge / BricksExtras if used), and enter commercial license keys.
-* **Connect MCP (OAuth):** Authenticate the site via **MCP Novamira Pro OAuth** in Codex (ChatGPT Desktop) / Antigravity Desktop.
+* **Connect Site (`novamira` CLI on Antigravity):** Run `novamira auth` / configure site profile via `novamira sites` and verify health with `novamira doctor`. *(On MCP-only clients, authenticate via MCP Novamira Pro OAuth).*
 * **Configure Novamira Abilities Hub:** In `wp-admin > Novamira > Abilities Hub`, verify required groups are enabled (**Bricks Specialization**, **Novamira Design**, **Novamira Memories**, **Novamira Site Skills**, **WordPress / WP-CLI / Filesystem**) and ensure **Read Mode is OFF** on Staging (keep Read Mode ON for Production sites).
 
 ### 0.2. Stage 2.1 — Mandatory 7-Plugin Stack Configuration (Hard Gate)

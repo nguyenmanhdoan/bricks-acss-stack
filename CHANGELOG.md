@@ -2,6 +2,13 @@
 
 Mọi thay đổi quan trọng của bộ skill `bricks-acss-stack` được ghi nhận tại đây theo chuẩn Semantic Versioning.
 
+## [2.4.3] - 2026-11-25
+
+### Changed
+* **Cập nhật phương thức kết nối Novamira CLI cho Google Antigravity** trong `SKILL.md` và `references/novamira-pro-ops.md`:
+  * Bổ sung Mục **0.0 — Antigravity Connection Transport: `novamira` CLI (REST-First)** với bộ lệnh chuẩn của `@novamira/cli` (`novamira sites`, `novamira doctor`, `novamira discover --json`, `novamira describe <ability> --json`, `novamira run <ability> --json`, `novamira skill`, `novamira upload <local> <remote>`) và quy tắc cấm tự gắn cờ `--yes` cho thao tác hủy dữ liệu khi chưa có xác nhận.
+  * Giữ tương thích song song với kết nối MCP OAuth cho các client khác.
+
 ## [2.4.2] - 2026-11-25
 
 ### Added
